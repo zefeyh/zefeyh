@@ -1,1 +1,173 @@
-git home.777808.xyz
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>梁老师网址导航</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+		<meta charset="utf-8">
+		<script src="js/vue.global.js"></script>
+		<link rel="shortcuticon" href="./favicon.ico" />
+		<!-- 引入Font Awesome CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+		<div id="app">
+			<div class="box header"><span class="logo">梁老师网址导航</span><input class="search-input" placeholder="搜索网站..."
+					v-model="searchKeyword" />
+			</div>
+			<div class="box sidebar">
+				<div class="category-item" v-for="(category, index) in categories"
+					:class="{ active: selectedCategory === category }" @click="selectCategory(category)" :key="index">
+					{{ category }}
+				</div>
+			</div>
+			<div class="container">
+				<div>
+				
+					<div class="content">
+						<div class="item" v-for="(website, index) in filteredWebsites" :key="index">
+							<a :href="website.url" target="_blank">
+								<div class="siteico"><img :src="website.logo" onerror="this.src='./img/default.png'"></div>
+								<div class="site-info">
+									<div class="sitetitle">{{ website.name }}</div>
+									<div class="sitecontent">{{ website.desc }}</div>
+								</div>
+								<div class="remark-icons">
+									<i v-for="mark in website.remark" :key="mark" class="icon" :class="getIcon(mark)"></i>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div><!--结束container-->
+			<div class="box footer">
+				<div class="container-tip">
+					<span class="trigger" id="trigger">
+						<i class="fa fa-info-circle"></i> 图标说明
+					</span>
+					<span class="trigger" id="trigger2">
+						<i class="fa fa-info-circle"></i> 免责声明
+					</span>
+					<div class="explanation-box" id="explanationBox">
+						<div>
+							<div class="fa fa-windows">  微软系统适用  </div>
+							<div class="fa fa-apple">  苹果系统适用  </div>
+							<div class="fa fa-linux">  linux系统适用  </div>
+							<div class="fa fa-android">  安卓系统适用  </div>
+							<div class="fa fa-rmb">  需要付费使用  </div>
+							<div class="fa fa-ban">  大陆地区无法访问  </div>
+							<div class="fa fa-heart">  推荐网站  </div>
+							<div class="fa fa-github">  github资源  </div>
+						</div>
+					</div>
+					<div class="explanation-box" id="explanationBox2">
+						<div>
+							本人收藏夹内容，所有资源均来自互联网，如有侵权，请联系我删除，本站不负任何法律责任。
+						</div>
+					</div>
+				</div>
+				<div>© Copyright 2004-2026 . All rights reserved. E-mail：cnzefe@gmail.com</div>
+			</div>
+		</div>
+		<script>
+			Vue.createApp({
+				data() {
+					return {
+						searchKeyword: '',
+						selectedCategory: '全部',
+						isSidebarCollapsed: false,
+						categories: ['全部', '影视娱乐', '资源素材', '工具类', '博客论坛','域名空间', '安卓软件', 'AI相关', '网络相关'],
+						websites: [],
+					}
+				},
+				created() {
+					this.fetchData();
+				},
+				computed: {
+					filteredWebsites() {
+						const keyword = this.searchKeyword.toLowerCase();
+						return this.websites.filter(website =>
+							(this.selectedCategory === '全部' || website.category === this.selectedCategory) &&
+							(keyword === '' ||
+								website.name.toLowerCase().includes(keyword) ||
+								website.desc.toLowerCase().includes(keyword) ||
+								website.url.toLowerCase().includes(keyword)
+							)
+						)
+					}
+				},
+				methods: {
+					selectCategory(category) {
+						this.selectedCategory = category;
+						// 添加滚动效果
+						const container = document.querySelector('.container');
+						container.scrollTo({
+							top: 0,
+							behavior: 'smooth'
+						});
+					},
+					async fetchData() {
+						try {
+							const response = await fetch('./websites.json'); // 加载外部 JSON 文件
+							const data = await response.json(); // 解析 JSON
+							this.websites = data;
+							//console.log(data);
+						} catch (error) {
+							console.log('加载数据失败:', error);
+						}
+					},
+					getIcon(mark) {
+						const icons = {
+							'windows': 'fa fa-windows windows',
+							'mac': 'fa fa-apple mac',
+							'linux': 'fa fa-linux linux',
+							'android': 'fa fa-android android',
+							'fufei': 'fa fa-rmb fufei',
+							'kexue': 'fa fa-ban kexue',
+							'heart': 'fa fa-heart heart',
+							'github': 'fa fa-github linux'
+						}
+						return icons[mark.toLowerCase()];
+					}
+				}
+			}).mount('#app')
+
+		class ExplanationBox {
+		  constructor(triggerId, boxId) {
+			this.trigger = document.getElementById(triggerId);
+			this.box = document.getElementById(boxId);
+			this.init();
+		  }
+		  init() {
+			this.trigger.addEventListener('click', this.toggle.bind(this));
+			document.addEventListener('click', this.checkOutsideClick.bind(this));
+		  }
+		  toggle(e) {
+			e.stopPropagation();
+			this.box.classList.toggle('show');
+		  }
+		  checkOutsideClick(e) {
+			if (!this.trigger.contains(e.target) && 
+				!this.box.contains(e.target)) {
+			  this.box.classList.remove('show');
+			}
+		  }
+		}
+		// 使用
+		new ExplanationBox('trigger', 'explanationBox');
+		new ExplanationBox('trigger2', 'explanationBox2');
+
+		// 在 Vue 实例后添加以下代码
+		document.querySelector('.sidebar').addEventListener('click', function() {
+			this.classList.toggle('active');
+		});
+
+		document.addEventListener('click', function(e) {
+			const sidebar = document.querySelector('.sidebar');
+			if (!sidebar.contains(e.target)) {
+				sidebar.classList.remove('active');
+			}
+		});
+		</script>
+	</body>
+</html>
