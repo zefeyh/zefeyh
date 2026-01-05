@@ -1,173 +1,272 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>梁老师网址导航</title>
-		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
-		<meta charset="utf-8">
-		<script src="js/vue.global.js"></script>
-		<link rel="shortcuticon" href="./favicon.ico" />
-		<!-- 引入Font Awesome CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="main.css">
-	</head>
-	<body>
-		<div id="app">
-			<div class="box header"><span class="logo">梁老师网址导航</span><input class="search-input" placeholder="搜索网站..."
-					v-model="searchKeyword" />
-			</div>
-			<div class="box sidebar">
-				<div class="category-item" v-for="(category, index) in categories"
-					:class="{ active: selectedCategory === category }" @click="selectCategory(category)" :key="index">
-					{{ category }}
-				</div>
-			</div>
-			<div class="container">
-				<div>
-				
-					<div class="content">
-						<div class="item" v-for="(website, index) in filteredWebsites" :key="index">
-							<a :href="website.url" target="_blank">
-								<div class="siteico"><img :src="website.logo" onerror="this.src='./img/default.png'"></div>
-								<div class="site-info">
-									<div class="sitetitle">{{ website.name }}</div>
-									<div class="sitecontent">{{ website.desc }}</div>
-								</div>
-								<div class="remark-icons">
-									<i v-for="mark in website.remark" :key="mark" class="icon" :class="getIcon(mark)"></i>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div><!--结束container-->
-			<div class="box footer">
-				<div class="container-tip">
-					<span class="trigger" id="trigger">
-						<i class="fa fa-info-circle"></i> 图标说明
-					</span>
-					<span class="trigger" id="trigger2">
-						<i class="fa fa-info-circle"></i> 免责声明
-					</span>
-					<div class="explanation-box" id="explanationBox">
-						<div>
-							<div class="fa fa-windows">  微软系统适用  </div>
-							<div class="fa fa-apple">  苹果系统适用  </div>
-							<div class="fa fa-linux">  linux系统适用  </div>
-							<div class="fa fa-android">  安卓系统适用  </div>
-							<div class="fa fa-rmb">  需要付费使用  </div>
-							<div class="fa fa-ban">  大陆地区无法访问  </div>
-							<div class="fa fa-heart">  推荐网站  </div>
-							<div class="fa fa-github">  github资源  </div>
-						</div>
-					</div>
-					<div class="explanation-box" id="explanationBox2">
-						<div>
-							本人收藏夹内容，所有资源均来自互联网，如有侵权，请联系我删除，本站不负任何法律责任。
-						</div>
-					</div>
-				</div>
-				<div>© Copyright 2004-2026 . All rights reserved. E-mail：cnzefe@gmail.com</div>
-			</div>
-		</div>
-		<script>
-			Vue.createApp({
-				data() {
-					return {
-						searchKeyword: '',
-						selectedCategory: '全部',
-						isSidebarCollapsed: false,
-						categories: ['全部', '影视娱乐', '资源素材', '工具类', '博客论坛','域名空间', '安卓软件', 'AI相关', '网络相关'],
-						websites: [],
-					}
-				},
-				created() {
-					this.fetchData();
-				},
-				computed: {
-					filteredWebsites() {
-						const keyword = this.searchKeyword.toLowerCase();
-						return this.websites.filter(website =>
-							(this.selectedCategory === '全部' || website.category === this.selectedCategory) &&
-							(keyword === '' ||
-								website.name.toLowerCase().includes(keyword) ||
-								website.desc.toLowerCase().includes(keyword) ||
-								website.url.toLowerCase().includes(keyword)
-							)
-						)
-					}
-				},
-				methods: {
-					selectCategory(category) {
-						this.selectedCategory = category;
-						// 添加滚动效果
-						const container = document.querySelector('.container');
-						container.scrollTo({
-							top: 0,
-							behavior: 'smooth'
-						});
-					},
-					async fetchData() {
-						try {
-							const response = await fetch('./websites.json'); // 加载外部 JSON 文件
-							const data = await response.json(); // 解析 JSON
-							this.websites = data;
-							//console.log(data);
-						} catch (error) {
-							console.log('加载数据失败:', error);
-						}
-					},
-					getIcon(mark) {
-						const icons = {
-							'windows': 'fa fa-windows windows',
-							'mac': 'fa fa-apple mac',
-							'linux': 'fa fa-linux linux',
-							'android': 'fa fa-android android',
-							'fufei': 'fa fa-rmb fufei',
-							'kexue': 'fa fa-ban kexue',
-							'heart': 'fa fa-heart heart',
-							'github': 'fa fa-github linux'
-						}
-						return icons[mark.toLowerCase()];
-					}
-				}
-			}).mount('#app')
+<head>
+    <title>梁老师网址导航</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <!-- 引入Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+        /* 添加一些额外的样式 */
+        .site-item.hidden {
+            display: none;
+        }
+        .category-item.active {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="box header">
+            <span class="logo">梁老师网址导航</span>
+            <input class="search-input" placeholder="搜索网站..." id="searchInput" />
+        </div>
+        
+        <div class="box sidebar">
+            <div class="category-item active" data-category="全部">全部</div>
+            <div class="category-item" data-category="影视娱乐">影视娱乐</div>
+            <div class="category-item" data-category="资源素材">资源素材</div>
+            <div class="category-item" data-category="工具类">工具类</div>
+            <div class="category-item" data-category="博客论坛">博客论坛</div>
+            <div class="category-item" data-category="域名空间">域名空间</div>
+            <div class="category-item" data-category="安卓软件">安卓软件</div>
+            <div class="category-item" data-category="AI相关">AI相关</div>
+            <div class="category-item" data-category="网络相关">网络相关</div>
+        </div>
+        
+        <div class="container">
+            <div>
+                <div class="content" id="websitesContainer">
+                    <!-- 网站列表将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="box footer">
+            <div class="container-tip">
+                <span class="trigger" id="trigger">
+                    <i class="fa fa-info-circle"></i> 图标说明
+                </span>
+                <span class="trigger" id="trigger2">
+                    <i class="fa fa-info-circle"></i> 免责声明
+                </span>
+                <div class="explanation-box" id="explanationBox">
+                    <div>
+                        <div class="fa fa-windows">  微软系统适用  </div>
+                        <div class="fa fa-apple">  苹果系统适用  </div>
+                        <div class="fa fa-linux">  linux系统适用  </div>
+                        <div class="fa fa-android">  安卓系统适用  </div>
+                        <div class="fa fa-rmb">  需要付费使用  </div>
+                        <div class="fa fa-ban">  大陆地区无法访问  </div>
+                        <div class="fa fa-heart">  推荐网站  </div>
+                        <div class="fa fa-github">  github资源  </div>
+                    </div>
+                </div>
+                <div class="explanation-box" id="explanationBox2">
+                    <div>
+                        本人收藏夹内容，所有资源均来自互联网，如有侵权，请联系我删除，本站不负任何法律责任。
+                    </div>
+                </div>
+            </div>
+            <div>© Copyright 2004-2026 . All rights reserved. E-mail：<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1a7974607f7c7f5a7d777b737634797577">[email&#160;protected]</a></div>
+        </div>
+    </div>
 
-		class ExplanationBox {
-		  constructor(triggerId, boxId) {
-			this.trigger = document.getElementById(triggerId);
-			this.box = document.getElementById(boxId);
-			this.init();
-		  }
-		  init() {
-			this.trigger.addEventListener('click', this.toggle.bind(this));
-			document.addEventListener('click', this.checkOutsideClick.bind(this));
-		  }
-		  toggle(e) {
-			e.stopPropagation();
-			this.box.classList.toggle('show');
-		  }
-		  checkOutsideClick(e) {
-			if (!this.trigger.contains(e.target) && 
-				!this.box.contains(e.target)) {
-			  this.box.classList.remove('show');
-			}
-		  }
-		}
-		// 使用
-		new ExplanationBox('trigger', 'explanationBox');
-		new ExplanationBox('trigger2', 'explanationBox2');
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    
+    <!-- 网站数据可以直接内嵌在HTML中 -->
+    <script>
+        // 网站数据
+        const websitesData = [
+            // 这里添加你的网站数据，格式示例：
+            // {
+            //     "name": "示例网站",
+            //     "url": "https://example.com",
+            //     "logo": "logo.png",
+            //     "desc": "网站描述",
+            //     "category": "工具类",
+            //     "remark": ["windows", "heart"]
+            // },
+            // 添加更多网站...
+        ];
 
-		// 在 Vue 实例后添加以下代码
-		document.querySelector('.sidebar').addEventListener('click', function() {
-			this.classList.toggle('active');
-		});
+        // 分类数据
+        const categories = ['全部', '影视娱乐', '资源素材', '工具类', '博客论坛', '域名空间', '安卓软件', 'AI相关', '网络相关'];
 
-		document.addEventListener('click', function(e) {
-			const sidebar = document.querySelector('.sidebar');
-			if (!sidebar.contains(e.target)) {
-				sidebar.classList.remove('active');
-			}
-		});
-		</script>
-	</body>
+        // 图标映射
+        const iconMap = {
+            'windows': 'fa fa-windows windows',
+            'mac': 'fa fa-apple mac',
+            'linux': 'fa fa-linux linux',
+            'android': 'fa fa-android android',
+            'fufei': 'fa fa-rmb fufei',
+            'kexue': 'fa fa-ban kexue',
+            'heart': 'fa fa-heart heart',
+            'github': 'fa fa-github linux'
+        };
+
+        // 当前选中的分类
+        let selectedCategory = '全部';
+        // 当前搜索关键词
+        let searchKeyword = '';
+
+        // 初始化函数
+        function init() {
+            // 先尝试从外部JSON文件加载数据
+            fetchWebsitesData();
+            
+            // 绑定事件
+            bindEvents();
+            
+            // 初始渲染
+            renderWebsites();
+        }
+
+        // 加载网站数据
+        async function fetchWebsitesData() {
+            try {
+                const response = await fetch('./websites.json');
+                const data = await response.json();
+                // 合并数据（如果有内嵌数据的话）
+                if (websitesData.length === 0) {
+                    websitesData.push(...data);
+                }
+                renderWebsites();
+            } catch (error) {
+                console.log('加载外部数据失败，使用内嵌数据或显示错误:', error);
+                // 如果加载失败，可以显示一个错误消息
+                if (websitesData.length === 0) {
+                    document.getElementById('websitesContainer').innerHTML = 
+                        '<div style="text-align: center; padding: 20px; color: #666;">数据加载失败，请检查网络连接或数据文件</div>';
+                }
+            }
+        }
+
+        // 绑定事件
+        function bindEvents() {
+            // 搜索框输入事件
+            document.getElementById('searchInput').addEventListener('input', function(e) {
+                searchKeyword = e.target.value.toLowerCase();
+                renderWebsites();
+            });
+
+            // 分类点击事件
+            document.querySelectorAll('.category-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    // 移除所有active类
+                    document.querySelectorAll('.category-item').forEach(el => {
+                        el.classList.remove('active');
+                    });
+                    // 给当前点击的添加active
+                    this.classList.add('active');
+                    selectedCategory = this.dataset.category;
+                    
+                    // 平滑滚动到顶部
+                    const container = document.querySelector('.container');
+                    container.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    
+                    renderWebsites();
+                });
+            });
+
+            // 原有的弹出框逻辑
+            new ExplanationBox('trigger', 'explanationBox');
+            new ExplanationBox('trigger2', 'explanationBox2');
+
+            // 侧边栏点击事件（移动端）
+            document.querySelector('.sidebar').addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function(e) {
+                const sidebar = document.querySelector('.sidebar');
+                if (!sidebar.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        }
+
+        // 渲染网站列表
+        function renderWebsites() {
+            const container = document.getElementById('websitesContainer');
+            
+            // 过滤网站
+            const filtered = websitesData.filter(website => {
+                const matchCategory = selectedCategory === '全部' || website.category === selectedCategory;
+                const matchSearch = searchKeyword === '' ||
+                    website.name.toLowerCase().includes(searchKeyword) ||
+                    website.desc.toLowerCase().includes(searchKeyword) ||
+                    website.url.toLowerCase().includes(searchKeyword);
+                
+                return matchCategory && matchSearch;
+            });
+
+            // 生成HTML
+            let html = '';
+            filtered.forEach(website => {
+                const remarkIcons = website.remark ? website.remark.map(mark => {
+                    const iconClass = iconMap[mark.toLowerCase()] || '';
+                    return `<i class="icon ${iconClass}"></i>`;
+                }).join('') : '';
+
+                html += `
+                    <div class="item">
+                        <a href="${website.url}" target="_blank">
+                            <div class="siteico">
+                                <img src="${website.logo}" onerror="this.src='./img/default.png'">
+                            </div>
+                            <div class="site-info">
+                                <div class="sitetitle">${website.name}</div>
+                                <div class="sitecontent">${website.desc}</div>
+                            </div>
+                            <div class="remark-icons">
+                                ${remarkIcons}
+                            </div>
+                        </a>
+                    </div>
+                `;
+            });
+
+            // 如果没有结果
+            if (filtered.length === 0) {
+                html = '<div style="text-align: center; padding: 40px; color: #666;">未找到相关网站</div>';
+            }
+
+            container.innerHTML = html;
+        }
+
+        // 原有的ExplanationBox类
+        class ExplanationBox {
+            constructor(triggerId, boxId) {
+                this.trigger = document.getElementById(triggerId);
+                this.box = document.getElementById(boxId);
+                this.init();
+            }
+            init() {
+                this.trigger.addEventListener('click', this.toggle.bind(this));
+                document.addEventListener('click', this.checkOutsideClick.bind(this));
+            }
+            toggle(e) {
+                e.stopPropagation();
+                this.box.classList.toggle('show');
+            }
+            checkOutsideClick(e) {
+                if (!this.trigger.contains(e.target) && 
+                    !this.box.contains(e.target)) {
+                    this.box.classList.remove('show');
+                }
+            }
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
 </html>
