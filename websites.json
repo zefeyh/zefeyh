@@ -896,5 +896,13 @@
         "logo": "ico\/github.png",
         "desc": "一键SSH命令生成器",
         "remark": []
+    },
+    {
+        "category": "网络相关",
+        "name": "v2raya",
+        "url": "https:\/\/v2raya.org\/",
+        "logo": ".\/ico\/v2ray.png",
+        "desc": "跨平台的 V2Ray 客户端",
+        "remark": []
     }
 ]
