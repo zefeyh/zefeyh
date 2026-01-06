@@ -363,6 +363,19 @@
     },
     {
         "category": "工具类",
+<<<<<<< HEAD
+=======
+        "name": "sms-activate",
+        "url": "https:\/\/sms-activate.org\/cn",
+        "logo": ".\/ico\/sms-activate.ico",
+        "desc": "接手机验证码平台",
+        "remark": [
+            "fufei"
+        ]
+    },
+    {
+        "category": "工具类",
+>>>>>>> 2ec4e644c7583fbafc610d621a01c56521a7d430
         "name": "草料二维码",
         "url": "https:\/\/cli.im\/",
         "logo": ".\/ico\/cli.ico",
@@ -893,8 +906,12 @@
         "url": "https:\/\/v2raya.org\/",
         "logo": ".\/ico\/v2ray.png",
         "desc": "跨平台的 V2Ray 客户端",
+<<<<<<< HEAD
         "remark": [
             "kexue"
         ]
+=======
+        "remark": []
+>>>>>>> 2ec4e644c7583fbafc610d621a01c56521a7d430
     }
 ]
