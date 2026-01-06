@@ -1,0 +1,900 @@
+[
+    {
+        "category": "影视娱乐",
+        "name": "哔哩哔哩",
+        "url": "https:\/\/www.bilibili.com",
+        "logo": ".\/ico\/bilibili.ico",
+        "desc": "国内知名的视频弹幕网站，学习资料也很丰富",
+        "remark": [
+            "heart"
+        ]
+    },
+    {
+        "category": "影视娱乐",
+        "name": "CCTV节目官网",
+        "url": "https:\/\/tv.cctv.com\/live\/",
+        "logo": ".\/ico\/cctv.ico",
+        "desc": "提供CCTV在线直播"
+    },
+    {
+        "category": "影视娱乐",
+        "name": "修罗影视",
+        "url": "https:\/\/xl01.com.de\/",
+        "logo": ".\/ico\/xlys.png",
+        "desc": "修罗影视",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "饭团影视",
+        "url": "https:\/\/www.fantuan.my\/",
+        "logo": ".\/ico\/fantuan.png",
+        "desc": "饭团影视发布页",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "饭太硬",
+        "url": "https:\/\/www.xn--sss604efuw.com\/",
+        "logo": ".\/ico\/fan.ico",
+        "desc": "TVBOX软件接口"
+    },
+    {
+        "category": "影视娱乐",
+        "name": "555电影",
+        "url": "https:\/\/zxdy5.top\/",
+        "logo": "ico\/555.png",
+        "desc": "555电影官网永久发布页",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "网易爆米花",
+        "url": "https:\/\/bmh.163.com\/",
+        "logo": "ico\/filmly.ico",
+        "desc": "网盘影片播放器",
+        "remark": [
+            "windows",
+            "mac",
+            "android"
+        ]
+    },
+    {
+        "category": "影视娱乐",
+        "name": "AlgerMusicPlayer",
+        "url": "https:\/\/donate.alger.fun\/download",
+        "logo": "ico\/github.png",
+        "desc": "一个第三方音乐播放器",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "星空音乐",
+        "url": "https:\/\/www.vh.hk",
+        "logo": ".\/ico\/xk.ico",
+        "desc": "星空音乐",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "茉小影电影院",
+        "url": "https:\/\/www.moxy.top\/",
+        "logo": "ico\/moxy.png",
+        "desc": "茉小影电影院",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "3Q影视",
+        "url": "https:\/\/qqqys.com\/",
+        "logo": "ico\/qqqys.png",
+        "desc": "3Q影视",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "滴答影视",
+        "url": "https:\/\/www.didahd.pro\/",
+        "logo": "ico\/didahd.png",
+        "desc": "滴答影视",
+        "remark": []
+    },
+    {
+        "category": "域名空间",
+        "name": "edgeone",
+        "url": "https:\/\/edgeone.ai\/",
+        "logo": "ico\/edgeone.ico",
+        "desc": "国际版腾讯云的免费cdn",
+        "remark": []
+    },
+    {
+        "category": "资源素材",
+        "name": "pexels",
+        "url": "https:\/\/www.pexels.com\/zh-cn\/",
+        "logo": ".\/ico\/pexels.ico",
+        "desc": "素材图片和视频"
+    },
+    {
+        "category": "资源素材",
+        "name": "学习资源船舱",
+        "url": "https:\/\/link3.cc\/studyship",
+        "logo": ".\/ico\/jinjishe.ico",
+        "desc": "各资源集合"
+    },
+    {
+        "category": "资源素材",
+        "name": "万维维修",
+        "url": "https:\/\/www.rom100.com\/",
+        "logo": ".\/ico\/rom100.ico",
+        "desc": "手机刷机固件",
+        "remark": [
+            "fufei"
+        ]
+    },
+    {
+        "category": "资源素材",
+        "name": "安娜的档案",
+        "url": "https:\/\/zh.annas-archive.se\/",
+        "logo": ".\/ico\/annas-archive.ico",
+        "desc": "完全开放的图书馆",
+        "remark": [
+            "kexue"
+        ]
+    },
+    {
+        "category": "资源素材",
+        "name": "z-library",
+        "url": "https:\/\/z-library.sk\/",
+        "logo": ".\/ico\/z-library.ico",
+        "desc": "最大的在线图书馆",
+        "remark": [
+            "kexue"
+        ]
+    },
+    {
+        "category": "资源素材",
+        "name": "wallhaven",
+        "url": "https:\/\/wallhaven.cc\/",
+        "logo": ".\/ico\/wallhaven.ico",
+        "desc": "免费壁纸网站",
+        "remark": [
+            "kexue"
+        ]
+    },
+    {
+        "category": "资源素材",
+        "name": "hellogithub",
+        "url": "https:\/\/hellogithub.com\/",
+        "logo": ".\/ico\/hellogithub.png",
+        "desc": "开源社区，专注于发现和分享有趣、入门级的开源项目"
+    },
+    {
+        "category": "资源素材",
+        "name": "那些免费的砖",
+        "url": "https:\/\/thosefree.com\/",
+        "logo": ".\/ico\/thosefree.ico",
+        "desc": "发现优质的免费商用资源"
+    },
+    {
+        "category": "资源素材",
+        "name": "Font Awesome",
+        "url": "https:\/\/fontawesome.dashgame.com\/",
+        "logo": ".\/ico\/fa.ico",
+        "desc": "一套绝佳的图标字体库和CSS框架"
+    },
+    {
+        "category": "资源素材",
+        "name": "超星期刊",
+        "url": "https:\/\/qikan.chaoxing.com\/\/",
+        "logo": ".\/ico\/chaoxing.ico",
+        "desc": "超星期刊，登陆还有云盘和笔记"
+    },
+    {
+        "category": "资源素材",
+        "name": "浙江图书馆",
+        "url": "https:\/\/www.zjlib.cn\/#",
+        "logo": ".\/ico\/zjlib.ico",
+        "desc": "万方知网博看维普入口"
+    },
+    {
+        "category": "资源素材",
+        "name": "文叔叔",
+        "url": "https:\/\/www.wenshushu.cn\/",
+        "logo": ".\/ico\/wenshushu.ico",
+        "desc": "免费空间10GB"
+    },
+    {
+        "category": "资源素材",
+        "name": "UC网盘",
+        "url": "https:\/\/drive.uc.cn\/",
+        "logo": ".\/ico\/uc.ico",
+        "desc": "UC网盘"
+    },
+    {
+        "category": "资源素材",
+        "name": "123网盘",
+        "url": "https:\/\/123pan.com\/",
+        "logo": ".\/ico\/123pan.ico",
+        "desc": "123网盘"
+    },
+    {
+        "category": "资源素材",
+        "name": "菜鸟教程",
+        "url": "https:\/\/www.runoob.com\/",
+        "logo": ".\/ico\/cainiao.ico",
+        "desc": "提供了编程的基础技术教程、在线实例，实用工具",
+        "remark": []
+    },
+    {
+        "category": "资源素材",
+        "name": "美叶",
+        "url": "https:\/\/www.meiye.art\/",
+        "logo": "ico\/meiye.ico",
+        "desc": "优质设计内容推荐平台",
+        "remark": null
+    },
+    {
+        "category": "资源素材",
+        "name": "创世纪图书馆",
+        "url": "https:\/\/libgen.ac\/",
+        "logo": "ico\/libgen.png",
+        "desc": "优质电子书库",
+        "remark": [
+            "kexue"
+        ]
+    },
+    {
+        "category": "资源素材",
+        "name": "钛盘",
+        "url": "https:\/\/tmp.link\/",
+        "logo": "ico\/TMP.png",
+        "desc": "钛盘是一款无需登录、无限空间、不限速、免费的在线临时网盘",
+        "remark": []
+    },
+    {
+        "category": "资源素材",
+        "name": "爱纯净",
+        "url": "https:\/\/www.aichunjing.com\/",
+        "logo": "ico\/aicunjing.jpg",
+        "desc": "纯净系统下载平台",
+        "remark": []
+    },
+    {
+        "category": "资源素材",
+        "name": "游戏测试狮",
+        "url": "https:\/\/www.kdocs.cn\/l\/cuRMenOlpBRK",
+        "logo": ".\/img\/default.png",
+        "desc": "B站游戏测试狮",
+        "remark": []
+    },
+    {
+        "category": "资源素材",
+        "name": "星书签导航",
+        "url": "https:\/\/www.star8.cn\/",
+        "logo": "ico\/star8.png",
+        "desc": "星书签导航",
+        "remark": []
+    },
+    {
+        "category": "工具类",
+        "name": "有道翻译",
+        "url": "https:\/\/fanyi.youdao.com\/",
+        "logo": ".\/ico\/youdao.png",
+        "desc": "在线即时翻译"
+    },
+    {
+        "category": "工具类",
+        "name": "IPIP",
+        "url": "https:\/\/www.ipip.net\/",
+        "logo": ".\/ico\/ipip.ico",
+        "desc": "IP查询追踪测速"
+    },
+    {
+        "category": "工具类",
+        "name": "ip2location",
+        "url": "https:\/\/www.ip2location.com\/",
+        "logo": ".\/ico\/ip2location.ico",
+        "desc": "提供IP详细信息查询"
+    },
+    {
+        "category": "AI相关",
+        "name": "火山引擎",
+        "url": "https:\/\/volcengine.com\/",
+        "logo": ".\/ico\/volcengine.png",
+        "desc": "火山引擎",
+        "remark": []
+    },
+    {
+        "category": "工具类",
+        "name": "帮小忙",
+        "url": "https:\/\/tool.browser.qq.com\/",
+        "logo": ".\/ico\/tool-qq.ico",
+        "desc": "QQ浏览器在线工具箱平台"
+    },
+    {
+        "category": "工具类",
+        "name": "在线工具",
+        "url": "https:\/\/tool.lu\/",
+        "logo": ".\/ico\/tool-lu.ico",
+        "desc": "提供各类在线工具"
+    },
+    {
+        "category": "工具类",
+        "name": "KMS一键激活",
+        "url": "https:\/\/kms.cx\/",
+        "logo": "ico\/kms.png",
+        "desc": "KMS一键激活",
+        "remark": null
+    },
+    {
+        "category": "工具类",
+        "name": "remove.photos",
+        "url": "https:\/\/remove.photos\/",
+        "logo": ".\/ico\/remove-photos.ico",
+        "desc": "图片前景背景去除等"
+    },
+    {
+        "category": "工具类",
+        "name": "PDF24",
+        "url": "https:\/\/tools.pdf24.org\/zh\/",
+        "logo": ".\/ico\/pdf24.ico",
+        "desc": "免费在线PDF各类工具"
+    },
+    {
+        "category": "工具类",
+        "name": "vocalremover",
+        "url": "https:\/\/vocalremover.org\/",
+        "logo": ".\/ico\/vocalremover.ico",
+        "desc": "音乐人声分离工具"
+    },
+    {
+        "category": "工具类",
+        "name": "aconvert",
+        "url": "https:\/\/www.aconvert.com\/cn\/",
+        "logo": ".\/ico\/aconvert.ico",
+        "desc": "在线转换ALL"
+    },
+    {
+        "category": "工具类",
+        "name": "ioDraw",
+        "url": "https:\/\/www.iodraw.com\/",
+        "logo": ".\/ico\/iodraw.ico",
+        "desc": "免费在线画图"
+    },
+    {
+        "category": "工具类",
+        "name": "草料二维码",
+        "url": "https:\/\/cli.im\/",
+        "logo": ".\/ico\/cli.ico",
+        "desc": "二维码生成解析美化"
+    },
+    {
+        "category": "工具类",
+        "name": "ttsmaker",
+        "url": "https:\/\/ttsmaker.com\/zh-cn",
+        "logo": ".\/ico\/ttsmaker.ico",
+        "desc": "文字转语音",
+        "remark": [
+            "kexue"
+        ]
+    },
+    {
+        "category": "工具类",
+        "name": "utools",
+        "url": "https:\/\/u.tools",
+        "logo": ".\/ico\/utools.png",
+        "desc": "各类插件来实现各种功能，总有你希望得到的。"
+    },
+    {
+        "category": "工具类",
+        "name": "github加速",
+        "url": "https:\/\/github.777808.xyz",
+        "logo": ".\/ico\/zefe.ico",
+        "desc": "blocked后在URL后加?zefe",
+        "remark": []
+    },
+    {
+        "category": "工具类",
+        "name": "麦克风测试",
+        "url": "https:\/\/www.onlinemictest.com\/zh\/",
+        "logo": ".\/ico\/onlinemictest.png",
+        "desc": "常见外设在线测试，摄像头、键盘、手柄等"
+    },
+    {
+        "category": "工具类",
+        "name": "网速测试",
+        "url": "https:\/\/test.ustc.edu.cn\/",
+        "logo": ".\/ico\/test-ustc.ico",
+        "desc": "中国科学技术大学测速网站"
+    },
+    {
+        "category": "工具类",
+        "name": "Can I use",
+        "url": "https:\/\/caniuse.com\/",
+        "logo": ".\/ico\/caniuse.png",
+        "desc": "查询Web技术的浏览器兼容性"
+    },
+    {
+        "category": "工具类",
+        "name": "Gradients.app",
+        "url": "https:\/\/gradients.app\/zh\/",
+        "logo": ".\/ico\/gradients.ico",
+        "desc": "简化设计师、营销人员和SMM专家的工作"
+    },
+    {
+        "category": "工具类",
+        "name": "ChatTTS-ui",
+        "url": "https:\/\/github.com\/jianchang512\/ChatTTS-ui\/",
+        "logo": ".\/ico\/github.png",
+        "desc": "文字转声音，加入停顿、呼吸、笑声等",
+        "remark": [
+            "windows",
+            "github"
+        ]
+    },
+    {
+        "category": "工具类",
+        "name": "whisperdesktop",
+        "url": "https:\/\/github.com\/sakura6264\/WhisperDesktop\/",
+        "logo": ".\/ico\/github.png",
+        "desc": "基于whisper的声音转文字，可带时间线",
+        "remark": [
+            "windows",
+            "github"
+        ]
+    },
+    {
+        "category": "工具类",
+        "name": "标准地图服务",
+        "url": "http:\/\/bzdt.ch.mnr.gov.cn\/",
+        "logo": "ico\/sbsm.ico",
+        "desc": "标准地图服务",
+        "remark": []
+    },
+    {
+        "category": "工具类",
+        "name": "2925无限邮",
+        "url": "https:\/\/2925.com\/",
+        "logo": "ico\/2925.ico",
+        "desc": "无限邮，用户名后任意添加数字",
+        "remark": []
+    },
+    {
+        "category": "工具类",
+        "name": "docsmall",
+        "url": "https:\/\/docsmall.com\/",
+        "logo": "ico\/docsmall.png",
+        "desc": "免费的在线图片与 PDF 处理工具",
+        "remark": []
+    },
+    {
+        "category": "工具类",
+        "name": "腾讯ARC",
+        "url": "https:\/\/arc.tencent.com\/zh\/ai-demos\/faceRestoration",
+        "logo": "ico\/arc_tencent.ico",
+        "desc": "腾讯ARC实验室推出的AI产品",
+        "remark": []
+    },
+    {
+        "category": "工具类",
+        "name": "BgSub",
+        "url": "https:\/\/zh.bgsub.com\/webapp\/",
+        "logo": "ico\/bgsub.ico",
+        "desc": "使用AI技术自动抠图，删除或替换图像背景",
+        "remark": []
+    },
+    {
+        "category": "工具类",
+        "name": "网易见外工作台",
+        "url": "https:\/\/jianwai.youdao.com\/",
+        "logo": "ico\/jianwai163.ico",
+        "desc": "网易自营的智能转写翻译服务",
+        "remark": []
+    },
+    {
+        "category": "工具类",
+        "name": "mineru",
+        "url": "https:\/\/mineru.net\/",
+        "logo": "ico\/mineru.png",
+        "desc": "精准、高效的pdf转word",
+        "remark": [
+            "windows",
+            "github"
+        ]
+    },
+    {
+        "category": "工具类",
+        "name": "docker镜像监控",
+        "url": "https:\/\/status.anye.xyz\/",
+        "logo": ".\/ico\/zefe.ico",
+        "desc": "docker镜像监控",
+        "remark": []
+    },
+    {
+        "category": "工具类",
+        "name": "easytier",
+        "url": "https:\/\/easytier.cn\/",
+        "logo": "ico\/easytier.png",
+        "desc": "去中心化的异地组网方案",
+        "remark": []
+    },
+    {
+        "category": "工具类",
+        "name": "tailscale",
+        "url": "https:\/\/tailscale.com\/",
+        "logo": "ico\/tailscale.png",
+        "desc": "tailscale",
+        "remark": []
+    },
+    {
+        "category": "博客论坛",
+        "name": "廖雪峰",
+        "url": "https:\/\/www.liaoxuefeng.com\/",
+        "logo": ".\/ico\/liaoxuefeng.ico",
+        "desc": "廖雪峰的官方网站"
+    },
+    {
+        "category": "博客论坛",
+        "name": "阮一峰",
+        "url": "https:\/\/www.ruanyifeng.com\/blog\/",
+        "logo": ".\/ico\/ruanyifeng.ico",
+        "desc": "阮一峰的网络日志"
+    },
+    {
+        "category": "博客论坛",
+        "name": "我的博客",
+        "url": "https:\/\/www.zefe.top\/blog",
+        "logo": ".\/ico\/zefe.ico",
+        "desc": "我的博客",
+        "remark": []
+    },
+    {
+        "category": "域名空间",
+        "name": "racknerd",
+        "url": "https:\/\/racknerd.com\/",
+        "logo": ".\/ico\/racknerd.ico",
+        "desc": "便宜的vps",
+        "remark": [
+            "fufei"
+        ]
+    },
+    {
+        "category": "域名空间",
+        "name": "CF",
+        "url": "https:\/\/www.cloudflare-cn.com\/",
+        "logo": ".\/ico\/cloudflare.ico",
+        "desc": "CloudFlare"
+    },
+    {
+        "category": "域名空间",
+        "name": "tebi",
+        "url": "https:\/\/tebi.io\/",
+        "logo": ".\/ico\/tebi.svg",
+        "desc": "25G免费存储"
+    },
+    {
+        "category": "域名空间",
+        "name": "Freessl",
+        "url": "https:\/\/freessl.cn\/",
+        "logo": ".\/ico\/freessl.ico",
+        "desc": "提供免费SSL证书"
+    },
+    {
+        "category": "域名空间",
+        "name": "certbot",
+        "url": "https:\/\/certbot.eff.org\/",
+        "logo": ".\/ico\/certbot.ico",
+        "desc": "提供免费SSL证书"
+    },
+    {
+        "category": "域名空间",
+        "name": "surge",
+        "url": "https:\/\/surge.sh\/",
+        "logo": ".\/ico\/surge.png",
+        "desc": "面向前端开发人员的静态Web发布"
+    },
+    {
+        "category": "域名空间",
+        "name": "codeberg",
+        "url": "https:\/\/codeberg.org\/",
+        "logo": ".\/ico\/codeberg.png",
+        "desc": "代码托管网站"
+    },
+    {
+        "category": "域名空间",
+        "name": "vercel",
+        "url": "https:\/\/vercel.com\/",
+        "logo": ".\/ico\/vercel.ico",
+        "desc": "专为前端优化，速度极快"
+    },
+    {
+        "category": "域名空间",
+        "name": "netlify",
+        "url": "https:\/\/www.netlify.com\/",
+        "logo": ".\/ico\/netlify.svg",
+        "desc": "功能强大的静态网站托管平台"
+    },
+    {
+        "category": "域名空间",
+        "name": "ImageHub免费图床",
+        "url": "https:\/\/www.imagehub.cc\/",
+        "logo": "ico\/imagehub.png",
+        "desc": "提供免费图片托管服务",
+        "remark": []
+    },
+    {
+        "category": "域名空间",
+        "name": "聚合图床",
+        "url": "https:\/\/www.superbed.cn\/",
+        "logo": "ico\/superbed.ico",
+        "desc": "高速稳定的图片上传和外链服务",
+        "remark": []
+    },
+    {
+        "category": "域名空间",
+        "name": "claw云",
+        "url": "https:\/\/run.claw.cloud\/",
+        "logo": "ico\/run-claw-cloud.ico",
+        "desc": "docker部署，每月$5额度",
+        "remark": []
+    },
+    {
+        "category": "域名空间",
+        "name": "namesilo",
+        "url": "https:\/\/www.namesilo.com\/",
+        "logo": "ico\/namesilo.ico",
+        "desc": "域名购买",
+        "remark": [
+            "fufei"
+        ]
+    },
+    {
+        "category": "域名空间",
+        "name": "dnshe",
+        "url": "https:\/\/dnshe.com",
+        "logo": "ico\/dnshe.png",
+        "desc": "免费域名",
+        "remark": []
+    },
+    {
+        "category": "安卓软件",
+        "name": "影视",
+        "url": "https:\/\/github.com\/FongMi\/Release",
+        "logo": ".\/ico\/100km.png",
+        "desc": "电视手机视频点播软件",
+        "remark": [
+            "android",
+            "github"
+        ]
+    },
+    {
+        "category": "安卓软件",
+        "name": "Termux",
+        "url": "https:\/\/f-droid.org\/en\/packages\/com.termux\/",
+        "logo": ".\/ico\/termux.png",
+        "desc": "安卓模拟linux系统",
+        "remark": [
+            "android",
+            "kexue"
+        ]
+    },
+    {
+        "category": "安卓软件",
+        "name": "洛雪音乐播放器",
+        "url": "https:\/\/lxmusic.toside.cn\/",
+        "logo": ".\/ico\/lxmusic.ico",
+        "desc": "音乐播放器，需要音源",
+        "remark": [
+            "windows",
+            "android"
+        ]
+    },
+    {
+        "category": "AI相关",
+        "name": "豆包",
+        "url": "https:\/\/www.doubao.com\/",
+        "logo": ".\/ico\/doubao.png",
+        "desc": "抖音旗下AI智能助手"
+    },
+    {
+        "category": "AI相关",
+        "name": "讯飞智作",
+        "url": "https:\/\/peiyin.xunfei.cn\/",
+        "logo": ".\/ico\/xunfei.ico",
+        "desc": "提供文字转语、虚拟人等"
+    },
+    {
+        "category": "AI相关",
+        "name": "深度学习",
+        "url": "https:\/\/zh.d2l.ai\/index.html",
+        "logo": ".\/ico\/d2l.png",
+        "desc": "深度学习教程"
+    },
+    {
+        "category": "AI相关",
+        "name": "KIMI",
+        "url": "https:\/\/kimi.moonshot.cn\/",
+        "logo": ".\/ico\/kimi.ico",
+        "desc": "会推理解析，能深度思考的AI助手"
+    },
+    {
+        "category": "AI相关",
+        "name": "文心一言",
+        "url": "https:\/\/yiyan.baidu.com\/",
+        "logo": ".\/ico\/yiyan.ico",
+        "desc": "百度的大模型，聊天、回答问题、画图识图"
+    },
+    {
+        "category": "AI相关",
+        "name": "deepseek",
+        "url": "https:\/\/chat.deepseek.com",
+        "logo": ".\/ico\/deepseek.svg",
+        "desc": "写代码、读文件、写作各种创意内容"
+    },
+    {
+        "category": "AI相关",
+        "name": "ollama",
+        "url": "https:\/\/ollama.com\/",
+        "logo": ".\/ico\/ollama.png",
+        "desc": "可以调用各种大模型本地化部署"
+    },
+    {
+        "category": "AI相关",
+        "name": "超算互联网",
+        "url": "https:\/\/chat.scnet.cn\/",
+        "logo": ".\/ico\/scnet-cn.ico",
+        "desc": "超算国家队提供的deepseek服务"
+    },
+    {
+        "category": "AI相关",
+        "name": "问小白",
+        "url": "https:\/\/www.wenxiaobai.com\/",
+        "logo": "ico\/wenxiaobai.ico",
+        "desc": "问小白提供的满血版 DeepSeek",
+        "remark": []
+    },
+    {
+        "category": "AI相关",
+        "name": "纳米AI",
+        "url": "https:\/\/n.cn\/",
+        "logo": ".\/ico\/n-cn.png",
+        "desc": "360提供的综合ai搜索服务"
+    },
+    {
+        "category": "AI相关",
+        "name": "秘塔AI搜索",
+        "url": "https:\/\/metaso.cn\/",
+        "logo": ".\/ico\/metaso.ico",
+        "desc": "无广告的搜索服务"
+    },
+    {
+        "category": "AI相关",
+        "name": "硅基流动",
+        "url": "https:\/\/siliconflow.cn\/zh-cn\/",
+        "logo": ".\/ico\/siliconflow.svg",
+        "desc": "致力于打造规模化、标准化、高效能 AI Infra 平台",
+        "remark": []
+    },
+    {
+        "category": "AI相关",
+        "name": "扣子",
+        "url": "https:\/\/www.coze.cn\/",
+        "logo": "ico\/coze.png",
+        "desc": "AI 大模型智能体开发平台",
+        "remark": []
+    },
+    {
+        "category": "AI相关",
+        "name": "cursor",
+        "url": "https:\/\/www.cursor.com\/",
+        "logo": ".\/ico\/cursor.png",
+        "desc": " AI 搭档编程",
+        "remark": [
+            "windows"
+        ]
+    },
+    {
+        "category": "AI相关",
+        "name": "TRAE",
+        "url": "https:\/\/www.trae.ai\/",
+        "logo": "ico\/trae.ico",
+        "desc": "字节跳动旗下AI编程",
+        "remark": [
+            "windows",
+            "mac",
+            "linux"
+        ]
+    },
+    {
+        "category": "AI相关",
+        "name": "即梦AI",
+        "url": "https:\/\/jimeng.jianying.com\/",
+        "logo": "ico\/jimeng.ico",
+        "desc": "字节跳动旗下的一站式AI创意创作平台",
+        "remark": []
+    },
+    {
+        "category": "网络相关",
+        "name": "haveibeenpwned",
+        "url": "https:\/\/haveibeenpwned.com\/",
+        "logo": ".\/ico\/haveibeenpwned.ico",
+        "desc": "查看密码是否泄露"
+    },
+    {
+        "category": "网络相关",
+        "name": "v2rayN",
+        "url": "https:\/\/github.com\/2dust\/v2rayN\/",
+        "logo": ".\/ico\/v2ray.png",
+        "desc": "v2rayN电脑端",
+        "remark": [
+            "windows",
+            "github"
+        ]
+    },
+    {
+        "category": "网络相关",
+        "name": "v2rayNG",
+        "url": "https:\/\/github.com\/2dust\/v2rayNG\/",
+        "logo": ".\/ico\/v2ray.png",
+        "desc": "v2ray安卓端",
+        "remark": [
+            "android",
+            "github"
+        ]
+    },
+    {
+        "category": "网络相关",
+        "name": "FOFA网络空间测绘",
+        "url": "https:\/\/fofa.info",
+        "logo": ".\/ico\/fofa.ico",
+        "desc": "白帽子的漏洞影响范围分析、应用分布统计"
+    },
+    {
+        "category": "网络相关",
+        "name": "IP相关",
+        "url": "https:\/\/incolumitas.com",
+        "logo": ".\/ico\/incolumitas.ico",
+        "desc": "ip相关",
+        "remark": []
+    },
+    {
+        "category": "网络相关",
+        "name": "jsdelivr",
+        "url": "https:\/\/www.jsdelivr.com\/",
+        "logo": ".\/ico\/jsdelivr.svg",
+        "desc": "适用于开源项目的免费CDN"
+    },
+    {
+        "category": "网络相关",
+        "name": "网速测试",
+        "url": "https:\/\/www.speedtest.net\/",
+        "logo": ".\/ico\/speedtest.svg",
+        "desc": "网速测试"
+    },
+    {
+        "category": "网络相关",
+        "name": "formsubmit",
+        "url": "https:\/\/formsubmit.co\/",
+        "logo": "ico\/formsubmit.png",
+        "desc": "表单提交服务，信息发到邮箱，第一次需激活域名地址",
+        "remark": []
+    },
+    {
+        "category": "网络相关",
+        "name": "节点生成",
+        "url": "https:\/\/yonggekkk.github.io\/argosbx\/",
+        "logo": "ico\/github.png",
+        "desc": "一键SSH命令生成器",
+        "remark": []
+    },
+    {
+        "category": "网络相关",
+        "name": "v2raya",
+        "url": "https:\/\/v2raya.org\/",
+        "logo": ".\/ico\/v2ray.png",
+        "desc": "跨平台的 V2Ray 客户端",
+        "remark": [
+            "kexue"
+        ]
+    }
+]
