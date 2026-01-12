@@ -675,6 +675,14 @@
         "remark": []
     },
     {
+        "category": "域名空间",
+        "name": "alwaysdata",
+        "url": "https:\/\/www.alwaysdata.com",
+        "logo": "ico\/alwaysdata.png",
+        "desc": "vps免费，注册需纯净IP",
+        "remark": []
+    },
+    {
         "category": "安卓软件",
         "name": "影视",
         "url": "https:\/\/github.com\/FongMi\/Release",
