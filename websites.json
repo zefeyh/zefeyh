@@ -691,6 +691,14 @@
         "remark": []
     },
     {
+        "category": "域名空间",
+        "name": "railway",
+        "url": "https:\/\/railway.com\/",
+        "logo": "ico\/railway.png",
+        "desc": "免费1个月，删除账号可循环",
+        "remark": []
+    },
+    {
         "category": "安卓软件",
         "name": "影视",
         "url": "https:\/\/github.com\/FongMi\/Release",
