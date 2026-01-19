@@ -518,7 +518,9 @@
         "url": "https:\/\/easytier.cn\/",
         "logo": "ico\/easytier.png",
         "desc": "去中心化的异地组网方案",
-        "remark": []
+        "remark": [
+            "heart"
+        ]
     },
     {
         "category": "工具类",
