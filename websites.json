@@ -555,6 +555,14 @@
         "remark": []
     },
     {
+        "category": "工具类",
+        "name": "sojson",
+        "url": "https:\/\/www.sojson.com\/",
+        "logo": "img\/default.png",
+        "desc": "sojson",
+        "remark": []
+    },
+    {
         "category": "博客论坛",
         "name": "廖雪峰",
         "url": "https:\/\/www.liaoxuefeng.com\/",
@@ -574,6 +582,14 @@
         "url": "https:\/\/www.zefe.top\/blog",
         "logo": ".\/ico\/zefe.ico",
         "desc": "我的博客",
+        "remark": []
+    },
+    {
+        "category": "博客论坛",
+        "name": "我爱破解",
+        "url": "https:\/\/www.52pojie.cn\/",
+        "logo": "ico\/52pojie.png",
+        "desc": "破解破解破解",
         "remark": []
     },
     {
