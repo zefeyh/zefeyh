@@ -556,10 +556,10 @@
     },
     {
         "category": "工具类",
-        "name": "sojson",
+        "name": "json在线",
         "url": "https:\/\/www.sojson.com\/",
-        "logo": "img\/default.png",
-        "desc": "sojson",
+        "logo": "ico\/sojson.png",
+        "desc": "在线json解析等工具",
         "remark": []
     },
     {
