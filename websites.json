@@ -69,14 +69,6 @@
     },
     {
         "category": "影视娱乐",
-        "name": "星空音乐",
-        "url": "https:\/\/www.vh.hk",
-        "logo": ".\/ico\/xk.ico",
-        "desc": "星空音乐",
-        "remark": []
-    },
-    {
-        "category": "影视娱乐",
         "name": "茉小影电影院",
         "url": "https:\/\/www.moxy.top\/",
         "logo": "ico\/moxy.png",
@@ -972,5 +964,13 @@
         "remark": [
             "kexue"
         ]
+    },
+    {
+        "category": "网络相关",
+        "name": "ip2free",
+        "url": "https:\/\/www.ip2free.com\/",
+        "logo": "ico\/ip2free.png",
+        "desc": "注册即送10个免费代理ip",
+        "remark": []
     }
 ]
