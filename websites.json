@@ -882,6 +882,14 @@
         "remark": []
     },
     {
+        "category": "AI相关",
+        "name": "openclaw",
+        "url": "https:\/\/openclaw.ai\/",
+        "logo": "ico\/openclaw.png",
+        "desc": "清空收件箱、发送电子邮件、管理日历等",
+        "remark": []
+    },
+    {
         "category": "网络相关",
         "name": "haveibeenpwned",
         "url": "https:\/\/haveibeenpwned.com\/",
