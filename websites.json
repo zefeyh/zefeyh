@@ -128,7 +128,7 @@
     {
         "category": "资源素材",
         "name": "安娜的档案",
-        "url": "https:\/\/zh.annas-archive.se\/",
+        "url": "https:\/\/zh.annas-archive.li\/",
         "logo": ".\/ico\/annas-archive.ico",
         "desc": "完全开放的图书馆",
         "remark": [
@@ -761,7 +761,7 @@
         "category": "安卓软件",
         "name": "安卓软件",
         "url": "https:\/\/captain-droid.com\/zh\/",
-        "logo": "img\/default.png",
+        "logo": "ico\/captain-droid.png",
         "desc": "安卓软件下载",
         "remark": []
     },
