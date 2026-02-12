@@ -479,14 +479,6 @@
     },
     {
         "category": "工具类",
-        "name": "网易见外工作台",
-        "url": "https:\/\/jianwai.youdao.com\/",
-        "logo": "ico\/jianwai163.ico",
-        "desc": "网易自营的智能转写翻译服务",
-        "remark": []
-    },
-    {
-        "category": "工具类",
         "name": "mineru",
         "url": "https:\/\/mineru.net\/",
         "logo": "ico\/mineru.png",
