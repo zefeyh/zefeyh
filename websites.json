@@ -262,6 +262,14 @@
         "remark": []
     },
     {
+        "category": "资源素材",
+        "name": "1337x",
+        "url": "https:\/\/www.1377x.to\/",
+        "logo": "ico\/1337x.png",
+        "desc": "bt资源",
+        "remark": []
+    },
+    {
         "category": "工具类",
         "name": "有道翻译",
         "url": "https:\/\/fanyi.youdao.com\/",
@@ -741,6 +749,14 @@
         "remark": []
     },
     {
+        "category": "域名空间",
+        "name": "digvps",
+        "url": "https:\/\/digvps.com\/",
+        "logo": "ico\/digvps.png",
+        "desc": "专注VPS评测",
+        "remark": []
+    },
+    {
         "category": "安卓软件",
         "name": "影视",
         "url": "https:\/\/github.com\/FongMi\/Release",
@@ -911,6 +927,14 @@
         "url": "https:\/\/openclaw.ai\/",
         "logo": "ico\/openclaw.png",
         "desc": "清空收件箱、发送电子邮件、管理日历等",
+        "remark": []
+    },
+    {
+        "category": "AI相关",
+        "name": "claude",
+        "url": "https:\/\/claude.ai\/",
+        "logo": "ico\/claude.png",
+        "desc": "claude",
         "remark": []
     },
     {
