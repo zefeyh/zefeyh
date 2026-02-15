@@ -249,7 +249,7 @@
         "category": "资源素材",
         "name": "游戏测试狮",
         "url": "https:\/\/www.kdocs.cn\/l\/cuRMenOlpBRK",
-        "logo": ".\/img\/default.png",
+        "logo": ".\/ico\/default.png",
         "desc": "B站游戏测试狮",
         "remark": []
     },
@@ -518,7 +518,7 @@
         "category": "工具类",
         "name": "开发者工具箱",
         "url": "https:\/\/go.sssc.nyc.mn\/",
-        "logo": "img\/default.png",
+        "logo": "ico\/default.png",
         "desc": "js混淆",
         "remark": []
     },
@@ -754,6 +754,14 @@
         "url": "https:\/\/digvps.com\/",
         "logo": "ico\/digvps.png",
         "desc": "专注VPS评测",
+        "remark": []
+    },
+    {
+        "category": "域名空间",
+        "name": "serv00",
+        "url": "https:\/\/www.serv00.com\/",
+        "logo": "ico\/serv00.png",
+        "desc": "10年的免费主机",
         "remark": []
     },
     {
