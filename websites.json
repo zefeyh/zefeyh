@@ -1036,5 +1036,13 @@
         "logo": "ico\/ip2free.png",
         "desc": "注册即送10个免费代理ip",
         "remark": []
+    },
+    {
+        "category": "网络相关",
+        "name": "redteago",
+        "url": "https:\/\/esim.redteago.com\/zh-CN",
+        "logo": "ico\/redteago.png",
+        "desc": "esim数据流量推荐，出国必备",
+        "remark": []
     }
 ]
