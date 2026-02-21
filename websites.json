@@ -524,14 +524,6 @@
     },
     {
         "category": "工具类",
-        "name": "EDU临时邮箱",
-        "url": "https:\/\/tempmail.edu.kg\/",
-        "logo": "ico\/tempmail.png",
-        "desc": "临时邮箱，安全收信，用完即弃",
-        "remark": []
-    },
-    {
-        "category": "工具类",
         "name": "猫抓",
         "url": "https:\/\/github.com\/xifangczy\/cat-catch",
         "logo": "ico\/github.png",
