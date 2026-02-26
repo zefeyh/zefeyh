@@ -539,6 +539,14 @@
         "remark": []
     },
     {
+        "category": "工具类",
+        "name": "百度翻译",
+        "url": "https:\/\/fanyi.baidu.com\/",
+        "logo": "ico\/baidufanyi.png",
+        "desc": "百度翻译",
+        "remark": []
+    },
+    {
         "category": "博客论坛",
         "name": "廖雪峰",
         "url": "https:\/\/www.liaoxuefeng.com\/",
@@ -1035,6 +1043,14 @@
         "url": "https:\/\/esim.redteago.com\/zh-CN",
         "logo": "ico\/redteago.png",
         "desc": "esim数据流量推荐，出国必备",
+        "remark": []
+    },
+    {
+        "category": "网络相关",
+        "name": "ping0",
+        "url": "https:\/\/ping0.cc",
+        "logo": "ico\/ping0.png",
+        "desc": "检测ip地址归属",
         "remark": []
     }
 ]
