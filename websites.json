@@ -547,6 +547,14 @@
         "remark": []
     },
     {
+        "category": "工具类",
+        "name": "python混淆",
+        "url": "https:\/\/freecodingtools.org\/tools\/obfuscator\/python",
+        "logo": "ico\/freecodingtools.png",
+        "desc": "python混淆",
+        "remark": []
+    },
+    {
         "category": "博客论坛",
         "name": "廖雪峰",
         "url": "https:\/\/www.liaoxuefeng.com\/",
@@ -762,6 +770,14 @@
         "url": "https:\/\/www.serv00.com\/",
         "logo": "ico\/serv00.png",
         "desc": "10年的免费主机",
+        "remark": []
+    },
+    {
+        "category": "域名空间",
+        "name": "wasmer",
+        "url": "https:\/\/wasmer.io\/",
+        "logo": "ico\/wasmer.png",
+        "desc": "免费部署",
         "remark": []
     },
     {
