@@ -7,15 +7,508 @@
     <link rel="shortcut icon" href="./favicon.ico" />
     <!-- 引入Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
     <style>
-        /* 添加一些额外的样式 */
-        .site-item.hidden {
-            display: none;
+        @media only screen and (min-width: 768px) {
+            #app {
+                display: grid;
+                grid-template-columns: 160px 1fr;
+                grid-template-areas:
+                    "header  header"
+                    "sidebar container"
+                    "footer  footer";
+            }
+            .container::before {
+                display: none;
+            }
         }
+
+        @media only screen and (max-width: 767px) {
+            #app {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "container"
+                    "footer";
+            }
+            .sidebar {
+                padding: 0;
+                background-color: transparent;
+                box-shadow: none;
+                position: relative;
+            }
+            .category-item {
+                display: none;
+                margin: 0;
+                border-radius: 0;
+                border: none;
+                border-bottom: 1px solid #e0f0ff;
+            }
+            .category-item.active {
+                display: block;
+            }
+            .sidebar::before {
+                content: "选择分类 \25BC";
+                display: block;
+                padding: 12px;
+                background-color: #fff;
+                border: 1px solid #e0f0ff;
+                border-radius: 6px;
+                color: #3399ff;
+                cursor: pointer;
+                text-align: center;
+                font-size: 14px;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+            .sidebar.active {
+                background-color: #f8f9fa;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            .sidebar.active::before {
+                content: "选择分类 \25B2";
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            .sidebar.active .category-item {
+                display: block;
+            }
+            .search-input {
+                display: none;
+            }
+        }
+
+        @font-face {
+            font-family: 'dyfont';
+            src: url("./fonts/dyfontjj.ttf");
+            font-display: swap; /* 后备字体立即显示，加载完成后替换 */
+        }
+
+        body {
+            font-size: 14px;
+            font-size: .875rem;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            text-align: center;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .category-item {
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            color: #3399ff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+            background-color: #fff;
+            border: 1px solid #e0f0ff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-item::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #3399ff;
+            transition: width 0.3s ease;
+        }
+
+        .category-item:hover {
+            background-color: #e0f0ff;
+            transform: translateX(5px);
+            box-shadow: 2px 2px 8px rgba(51, 153, 255, 0.2);
+        }
+
+        .category-item:hover::after {
+            width: 100%;
+        }
+
         .category-item.active {
-            background-color: #007bff;
-            color: white;
+            background-color: #3399ff;
+            color: #fff;
+            border-color: #3399ff;
+            box-shadow: 2px 2px 8px rgba(51, 153, 255, 0.3);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .category-item.active::after {
+            content: "";
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-width: 6px 0 6px 8px;
+            border-color: transparent transparent transparent #3399ff;
+            transition: all 0.3s ease;
+        }
+
+        .category-item.active:hover {
+            transform: translateX(5px);
+            box-shadow: 3px 3px 10px rgba(51, 153, 255, 0.4);
+        }
+
+        /* 搜索框基础样式 */
+        .search-input {
+            position: static;
+            top: auto;
+            left: auto;
+            width: auto;
+            flex: 0 1 180px;
+            min-width: 120px;
+            max-width: 250px;
+            padding: 10px 16px;
+            border: 1px solid #e0f0ff;
+            background: #fff;
+            border-radius: 8px;
+            color: #3399ff;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            grid-area: container;
+            position: relative;
+            background-color: rgba(248, 248, 248, 0.5);
+            background-image: linear-gradient(rgba(50, 0, 0, 0.05) 1px, transparent 0), linear-gradient(90deg, rgba(50, 0, 0, 0.05) 1px, transparent 0);
+            background-size: 15px 15px;
+            background-color: #dedede;
+        }
+
+        .header {
+            grid-area: header;
+            height: 60px;
+            font-size: 30px;
+            font-family: 'dyfont';
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-right: 10px;
+        }
+
+        .logo {
+            line-height: 60px;
+            background: linear-gradient(to bottom, #00c4ff, #2990ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
+
+        /* 夜间模式切换按钮 */
+        .night-toggle {
+            flex-shrink: 0;
+            cursor: pointer;
+            font-size: 1.4rem;
+            color: #555;
+            transition: color 0.2s;
+            padding: 0 8px;
+            margin-left: auto;
+        }
+        .night-toggle:hover {
+            color: #007bff;
+        }
+
+        .footer {
+            grid-area: footer;
+            text-align: center;
+        }
+
+        #app {
+            margin: 0 auto;
+            grid-gap: 10px;
+            background-color: #fff;
+            color: #444;
+            transition: background-color 0.2s;
+        }
+
+        .box {
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .header,
+        .footer {
+            background-color: #f3f3f3;
+        }
+
+        .content {
+            display: grid;
+            grid-gap: 10px 10px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            padding: 10px;
+        }
+
+        .focus {
+            grid-row: 1/3;
+            grid-column: 1/2;
+        }
+
+        .item {
+            background-color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            height: 60px;
+            padding: 6px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 26px 40px -24px rgba(0, 36, 100, 0.3);
+            transition: all 0.3s ease;
+            background-color: #f5f5f5;
+        }
+
+        .item:active {
+            background-color: #e0e0e0;
+        }
+
+        .item a {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+            align-items: center;
+        }
+
+        .siteico {
+            flex: 0 0 40px;
+            height: 40px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        .site-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            padding-right: 30px;
+        }
+
+        .siteico img {
+            width: auto;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .sitetitle {
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 2px;
+        }
+
+        .sitecontent {
+            font-size: 12px;
+            color: #888888;
+            line-height: 1.2;
+            white-space: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .remark-icons {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            display: flex;
+            gap: 4px;
+        }
+
+        .icon {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .windows {
+            color: #00ADEF;
+        }
+        .apple {
+            color: #666;
+        }
+        .linux {
+            color: #000;
+        }
+        .android {
+            color: #3DDC84;
+        }
+        .fufei {
+            color: #11ee11;
+        }
+        .kexue {
+            color: #ee1111;
+        }
+        .heart {
+            color: #ee1111;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .sidebar {
+                padding: 10px;
+            }
+            .category-item {
+                padding: 10px;
+                margin: 6px 0;
+                font-size: 13px;
+            }
+        }
+
+        .explanation-box {
+            display: none;
+            position: fixed;
+            left: 50%;
+            bottom: 20%;
+            transform: translate(-50%, -50%);
+            background: #b6b7b8;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            z-index: 1000;
+            max-width: 80%;
+            width: 400px;
+            color: #ffffff;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .explanation-box.show {
+            display: block;
+        }
+
+        .explanation-box::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(134, 185, 227, 0.3);
+            z-index: -1;
+        }
+
+        .trigger {
+            cursor: pointer;
+            margin-right: 15px;
+            color: #2e2e2e;
+        }
+
+        .trigger:hover {
+            color: #ff3939;
+        }
+
+        /* ---------- 夜间模式样式 ---------- */
+        body.night-mode {
+            background-color: #121212 !important;
+            color: #e0e0e0 !important;
+        }
+        body.night-mode #app {
+            background-color: #121212 !important;
+        }
+        body.night-mode .box {
+            background-color: #1e1e1e !important;
+            border-color: #333 !important;
+        }
+        body.night-mode .sidebar {
+            background-color: #1e1e1e !important;
+            border-right: 1px solid #333 !important;
+        }
+        body.night-mode .category-item {
+            background-color: transparent !important;
+            color: #bbb !important;
+            border-bottom: 1px solid #2a2a2a !important;
+        }
+        body.night-mode .category-item.active {
+            background-color: #007bff !important;
+            color: #fff !important;
+        }
+        body.night-mode .category-item:hover {
+            background-color: #2c2c2c !important;
+        }
+        body.night-mode .item {
+            background-color: #2d2d2d !important;
+            border: 1px solid #3a3a3a !important;
+        }
+        body.night-mode .item a {
+            color: #ddd !important;
+        }
+        body.night-mode .item a:hover {
+            color: #fff !important;
+        }
+        body.night-mode .search-input {
+            background-color: #2a2a2a !important;
+            color: #f0f0f0 !important;
+            border: 1px solid #555 !important;
+        }
+        body.night-mode .search-input::placeholder {
+            color: #888 !important;
+        }
+        body.night-mode .footer {
+            color: #888 !important;
+            border-top-color: #333 !important;
+        }
+        body.night-mode .trigger {
+            color: #aaa !important;
+        }
+        body.night-mode .explanation-box {
+            background-color: #2d2d2d !important;
+            border: 1px solid #444 !important;
+            color: #ccc !important;
+        }
+        body.night-mode .explanation-box div div {
+            color: #ddd !important;
+        }
+        body.night-mode .explanation-box::before {
+            border-bottom-color: #2d2d2d !important;
+        }
+        body.night-mode .container,
+        body.night-mode .content {
+            background-color: #121212 !important;
+        }
+        body.night-mode .fa-windows,
+        body.night-mode .fa-apple,
+        body.night-mode .fa-linux,
+        body.night-mode .fa-android,
+        body.night-mode .fa-rmb,
+        body.night-mode .fa-ban,
+        body.night-mode .fa-heart,
+        body.night-mode .fa-github {
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -24,25 +517,16 @@
         <div class="box header">
             <span class="logo">梁老师网址导航</span>
             <input class="search-input" placeholder="搜索网站..." id="searchInput" />
+            <span class="night-toggle" id="nightToggle" title="切换夜间模式">
+                <i class="fa fa-moon-o"></i>
+            </span>
         </div>
         
-        <div class="box sidebar">
-            <div class="category-item active" data-category="全部">全部</div>
-            <div class="category-item" data-category="影视娱乐">影视娱乐</div>
-            <div class="category-item" data-category="资源素材">资源素材</div>
-            <div class="category-item" data-category="工具类">工具类</div>
-            <div class="category-item" data-category="博客论坛">博客论坛</div>
-            <div class="category-item" data-category="域名空间">域名空间</div>
-            <div class="category-item" data-category="安卓软件">安卓软件</div>
-            <div class="category-item" data-category="AI相关">AI相关</div>
-            <div class="category-item" data-category="网络相关">网络相关</div>
-        </div>
+        <div class="box sidebar" id="sidebarContainer"></div>
         
         <div class="container">
             <div>
-                <div class="content" id="websitesContainer">
-                    <!-- 网站列表将通过JavaScript动态生成 -->
-                </div>
+                <div class="content" id="websitesContainer"></div>
             </div>
         </div>
         
@@ -72,28 +556,13 @@
                     </div>
                 </div>
             </div>
-            <div>© Copyright 2004-2026 . All rights reserved. E-mail：cnzefe@gmail.com</div>
+            <div>© Copyright 2026 . All rights reserved. E-mail：cnzefe@gmail.com</div>
         </div>
     </div>
 
-    <!-- 网站数据可以直接内嵌在HTML中 -->
     <script>
-        // 网站数据
-        const websitesData = [
-            // 这里添加你的网站数据，格式示例：
-            // {
-            //     "name": "示例网站",
-            //     "url": "https://example.com",
-            //     "logo": "logo.png",
-            //     "desc": "网站描述",
-            //     "category": "工具类",
-            //     "remark": ["windows", "heart"]
-            // },
-            // 添加更多网站...
-        ];
-
-        // 分类数据
-        const categories = ['全部', '影视娱乐', '资源素材', '工具类', '博客论坛', '域名空间', '安卓软件', 'AI相关', '网络相关'];
+        // 内嵌网站数据（作为后备）
+        const embeddedWebsites = [];
 
         // 图标映射
         const iconMap = {
@@ -107,106 +576,160 @@
             'github': 'fa fa-github linux'
         };
 
-        // 当前选中的分类
+        // 状态变量
+        let allWebsites = [];
+        let categories = ['全部'];
         let selectedCategory = '全部';
-        // 当前搜索关键词
         let searchKeyword = '';
 
-        // 初始化函数
         function init() {
-            // 先尝试从外部JSON文件加载数据
+            applyStoredTheme();
+            renderSidebar();
             fetchWebsitesData();
-            
-            // 绑定事件
-            bindEvents();
-            
-            // 初始渲染
-            renderWebsites();
+            bindGlobalEvents();
         }
 
-        // 加载网站数据
+        function applyStoredTheme() {
+            const nightMode = localStorage.getItem('nightMode') === 'true';
+            const body = document.body;
+            const toggleIcon = document.querySelector('#nightToggle i');
+            if (nightMode) {
+                body.classList.add('night-mode');
+                if (toggleIcon) toggleIcon.className = 'fa fa-sun-o';
+            } else {
+                body.classList.remove('night-mode');
+                if (toggleIcon) toggleIcon.className = 'fa fa-moon-o';
+            }
+        }
+
         async function fetchWebsitesData() {
             try {
                 const response = await fetch('./websites.json');
                 const data = await response.json();
-                // 合并数据（如果有内嵌数据的话）
-                if (websitesData.length === 0) {
-                    websitesData.push(...data);
+                
+                if (Array.isArray(data)) {
+                    allWebsites = data;
+                    const uniqueCats = [...new Set(allWebsites.map(item => item.category))];
+                    categories = ['全部', ...uniqueCats];
+                } else if (data.categories && Array.isArray(data.categories)) {
+                    categories = data.categories;
+                    if (!categories.includes('全部')) categories.unshift('全部');
+                    allWebsites = data.websites || [];
+                } else {
+                    console.warn('无法识别的JSON格式，使用默认分类');
+                    allWebsites = [];
                 }
+                
+                if (categories.length === 0) categories = ['全部'];
+                if (!categories.includes(selectedCategory)) selectedCategory = '全部';
+                
+                renderSidebar();
                 renderWebsites();
             } catch (error) {
-                console.log('加载外部数据失败，使用内嵌数据或显示错误:', error);
-                // 如果加载失败，可以显示一个错误消息
-                if (websitesData.length === 0) {
+                console.error('加载外部数据失败，使用内嵌数据', error);
+                if (embeddedWebsites.length > 0) {
+                    allWebsites = embeddedWebsites;
+                    const uniqueCats = [...new Set(allWebsites.map(item => item.category))];
+                    categories = ['全部', ...uniqueCats];
+                } else {
                     document.getElementById('websitesContainer').innerHTML = 
                         '<div style="text-align: center; padding: 20px; color: #666;">数据加载失败，请检查网络连接或数据文件</div>';
                 }
+                renderSidebar();
+                renderWebsites();
             }
         }
 
-        // 绑定事件
-        function bindEvents() {
-            // 搜索框输入事件
-            document.getElementById('searchInput').addEventListener('input', function(e) {
-                searchKeyword = e.target.value.toLowerCase();
-                renderWebsites();
+        function getCategoryCounts() {
+            const counts = {};
+            categories.forEach(cat => {
+                if (cat === '全部') {
+                    counts[cat] = allWebsites.length;
+                } else {
+                    counts[cat] = allWebsites.filter(w => w.category === cat).length;
+                }
             });
+            return counts;
+        }
 
-            // 分类点击事件
+        function renderSidebar() {
+            const sidebar = document.getElementById('sidebarContainer');
+            if (!sidebar) return;
+            const counts = getCategoryCounts();
+            let html = '';
+            categories.forEach(cat => {
+                const activeClass = cat === selectedCategory ? 'active' : '';
+                const displayCount = counts[cat] !== undefined ? counts[cat] : 0;
+                html += `<div class="category-item ${activeClass}" data-category="${cat}">${cat} (${displayCount})</div>`;
+            });
+            sidebar.innerHTML = html;
+            bindCategoryEvents();
+        }
+
+        function bindCategoryEvents() {
             document.querySelectorAll('.category-item').forEach(item => {
-                item.addEventListener('click', function() {
-                    // 移除所有active类
-                    document.querySelectorAll('.category-item').forEach(el => {
-                        el.classList.remove('active');
-                    });
-                    // 给当前点击的添加active
+                item.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    document.querySelectorAll('.category-item').forEach(el => el.classList.remove('active'));
                     this.classList.add('active');
                     selectedCategory = this.dataset.category;
-                    
-                    // 平滑滚动到顶部
                     const container = document.querySelector('.container');
-                    container.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                    
+                    if (container) container.scrollTo({ top: 0, behavior: 'smooth' });
                     renderWebsites();
                 });
             });
+        }
 
-            // 原有的弹出框逻辑
-            new ExplanationBox('trigger', 'explanationBox');
-            new ExplanationBox('trigger2', 'explanationBox2');
+        function bindGlobalEvents() {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    searchKeyword = e.target.value.toLowerCase();
+                    renderWebsites();
+                });
+            }
 
-            // 侧边栏点击事件（移动端）
-            document.querySelector('.sidebar').addEventListener('click', function() {
-                this.classList.toggle('active');
-            });
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar) {
+                sidebar.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('sidebar')) this.classList.toggle('active');
+                });
+            }
 
             document.addEventListener('click', function(e) {
                 const sidebar = document.querySelector('.sidebar');
-                if (!sidebar.contains(e.target)) {
-                    sidebar.classList.remove('active');
-                }
+                if (sidebar && !sidebar.contains(e.target)) sidebar.classList.remove('active');
             });
+
+            new ExplanationBox('trigger', 'explanationBox');
+            new ExplanationBox('trigger2', 'explanationBox2');
+
+            const nightToggle = document.getElementById('nightToggle');
+            if (nightToggle) {
+                nightToggle.addEventListener('click', function() {
+                    const body = document.body;
+                    const icon = this.querySelector('i');
+                    body.classList.toggle('night-mode');
+                    const isNight = body.classList.contains('night-mode');
+                    icon.className = isNight ? 'fa fa-sun-o' : 'fa fa-moon-o';
+                    localStorage.setItem('nightMode', isNight);
+                });
+            }
         }
 
-        // 渲染网站列表
         function renderWebsites() {
             const container = document.getElementById('websitesContainer');
+            if (!container) return;
             
-            // 过滤网站
-            const filtered = websitesData.filter(website => {
+            const filtered = allWebsites.filter(website => {
                 const matchCategory = selectedCategory === '全部' || website.category === selectedCategory;
                 const matchSearch = searchKeyword === '' ||
-                    website.name.toLowerCase().includes(searchKeyword) ||
-                    website.desc.toLowerCase().includes(searchKeyword) ||
-                    website.url.toLowerCase().includes(searchKeyword);
-                
+                    (website.name && website.name.toLowerCase().includes(searchKeyword)) ||
+                    (website.desc && website.desc.toLowerCase().includes(searchKeyword)) ||
+                    (website.url && website.url.toLowerCase().includes(searchKeyword));
                 return matchCategory && matchSearch;
             });
 
-            // 生成HTML
             let html = '';
             filtered.forEach(website => {
                 const remarkIcons = website.remark ? website.remark.map(mark => {
@@ -221,8 +744,8 @@
                                 <img src="${website.logo}" onerror="this.src='./img/default.png'">
                             </div>
                             <div class="site-info">
-                                <div class="sitetitle">${website.name}</div>
-                                <div class="sitecontent">${website.desc}</div>
+                                <div class="sitetitle">${website.name || '未命名'}</div>
+                                <div class="sitecontent">${website.desc || ''}</div>
                             </div>
                             <div class="remark-icons">
                                 ${remarkIcons}
@@ -232,15 +755,12 @@
                 `;
             });
 
-            // 如果没有结果
             if (filtered.length === 0) {
                 html = '<div style="text-align: center; padding: 40px; color: #666;">未找到相关网站</div>';
             }
-
             container.innerHTML = html;
         }
 
-        // 原有的ExplanationBox类
         class ExplanationBox {
             constructor(triggerId, boxId) {
                 this.trigger = document.getElementById(triggerId);
@@ -256,14 +776,12 @@
                 this.box.classList.toggle('show');
             }
             checkOutsideClick(e) {
-                if (!this.trigger.contains(e.target) && 
-                    !this.box.contains(e.target)) {
+                if (!this.trigger.contains(e.target) && !this.box.contains(e.target)) {
                     this.box.classList.remove('show');
                 }
             }
         }
 
-        // 页面加载完成后初始化
         document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
