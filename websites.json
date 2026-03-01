@@ -970,6 +970,14 @@
         "remark": []
     },
     {
+        "category": "AI相关",
+        "name": "openrouter",
+        "url": "https:\/\/openrouter.ai",
+        "logo": "ico\/openrouter.ai.ico",
+        "desc": "各个模型的api调用，有免费模型。",
+        "remark": []
+    },
+    {
         "category": "网络相关",
         "name": "haveibeenpwned",
         "url": "https:\/\/haveibeenpwned.com\/",
