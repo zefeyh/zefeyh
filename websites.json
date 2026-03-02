@@ -555,6 +555,26 @@
         "remark": []
     },
     {
+        "category": "工具类",
+        "name": "GPT-SoVITS",
+        "url": "https:\/\/github.com\/RVC-Boss\/GPT-SoVITS",
+        "logo": "ico\/github.png",
+        "desc": "强大的少样本语音转换与语音合成",
+        "remark": [
+            "github"
+        ]
+    },
+    {
+        "category": "工具类",
+        "name": "Qwen3-TTS",
+        "url": "https:\/\/github.com\/QwenLM\/Qwen3-TTS",
+        "logo": "ico\/github.png",
+        "desc": "阿里开源TTS、语音克隆",
+        "remark": [
+            "github"
+        ]
+    },
+    {
         "category": "博客论坛",
         "name": "廖雪峰",
         "url": "https:\/\/www.liaoxuefeng.com\/",
