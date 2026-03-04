@@ -270,6 +270,14 @@
         "remark": []
     },
     {
+        "category": "资源素材",
+        "name": "中科大镜像源",
+        "url": "https:\/\/mirrors.ustc.edu.cn\/",
+        "logo": "ico\/ustc.png",
+        "desc": "中科大镜像源",
+        "remark": []
+    },
+    {
         "category": "工具类",
         "name": "有道翻译",
         "url": "https:\/\/fanyi.youdao.com\/",
@@ -572,6 +580,16 @@
         "desc": "阿里开源TTS、语音克隆",
         "remark": [
             "github"
+        ]
+    },
+    {
+        "category": "工具类",
+        "name": "接码平台",
+        "url": "https:\/\/hero-sms.com",
+        "logo": "ico\/default.png",
+        "desc": "接码平台",
+        "remark": [
+            "fufei"
         ]
     },
     {
