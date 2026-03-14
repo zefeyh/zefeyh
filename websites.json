@@ -593,6 +593,14 @@
         ]
     },
     {
+        "category": "工具类",
+        "name": "browserleaks",
+        "url": "https:\/\/browserleaks.com\/",
+        "logo": "ico\/browserleaks.com.ico",
+        "desc": "各网络工具",
+        "remark": []
+    },
+    {
         "category": "博客论坛",
         "name": "廖雪峰",
         "url": "https:\/\/www.liaoxuefeng.com\/",
