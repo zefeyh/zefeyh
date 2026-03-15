@@ -1024,6 +1024,14 @@
         "remark": []
     },
     {
+        "category": "AI相关",
+        "name": "nvidia ai",
+        "url": "https:\/\/build.nvidia.com\/",
+        "logo": "ico\/build.nvidia.com.ico",
+        "desc": "英伟达大模型集合",
+        "remark": []
+    },
+    {
         "category": "网络相关",
         "name": "haveibeenpwned",
         "url": "https:\/\/haveibeenpwned.com\/",
