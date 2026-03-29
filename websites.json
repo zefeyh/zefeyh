@@ -556,14 +556,6 @@
     },
     {
         "category": "工具类",
-        "name": "python混淆",
-        "url": "https:\/\/freecodingtools.org\/tools\/obfuscator\/python",
-        "logo": "ico\/freecodingtools.png",
-        "desc": "python混淆",
-        "remark": []
-    },
-    {
-        "category": "工具类",
         "name": "GPT-SoVITS",
         "url": "https:\/\/github.com\/RVC-Boss\/GPT-SoVITS",
         "logo": "ico\/github.png",
