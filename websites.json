@@ -780,14 +780,6 @@
     },
     {
         "category": "域名空间",
-        "name": "野草云",
-        "url": "https:\/\/www.yecaoyun.com\/",
-        "logo": "ico\/yecaoyun.png",
-        "desc": "野草云，便宜香港机器",
-        "remark": []
-    },
-    {
-        "category": "域名空间",
         "name": "中国科技云数据胶囊",
         "url": "https:\/\/data.cstcloud.cn\/",
         "logo": "ico\/cstcloud.png",
