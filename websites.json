@@ -278,6 +278,14 @@
         "remark": []
     },
     {
+        "category": "资源素材",
+        "name": "1music",
+        "url": "https:\/\/1music.cc",
+        "logo": ".\/ico\/default.png",
+        "desc": "可以上传收藏歌曲到webdav",
+        "remark": []
+    },
+    {
         "category": "工具类",
         "name": "有道翻译",
         "url": "https:\/\/fanyi.youdao.com\/",
@@ -649,13 +657,6 @@
     },
     {
         "category": "域名空间",
-        "name": "tebi",
-        "url": "https:\/\/tebi.io\/",
-        "logo": ".\/ico\/tebi.svg",
-        "desc": "25G免费存储"
-    },
-    {
-        "category": "域名空间",
         "name": "Freessl",
         "url": "https:\/\/freessl.cn\/",
         "logo": ".\/ico\/freessl.ico",
@@ -816,6 +817,14 @@
         "url": "https:\/\/www.3v.do\/",
         "logo": " ico\/3v.png",
         "desc": "香港永久空间",
+        "remark": []
+    },
+    {
+        "category": "域名空间",
+        "name": "koofr",
+        "url": "https:\/\/koofr.eu\/",
+        "logo": "ico\/koofr.eu.ico",
+        "desc": "支持webdav 10G空间",
         "remark": []
     },
     {
