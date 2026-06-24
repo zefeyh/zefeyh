@@ -87,6 +87,14 @@
         "remark": []
     },
     {
+        "category": "影视娱乐",
+        "name": "retroarch",
+        "url": "https:\/\/www.retroarch.com\/",
+        "logo": "ico\/retroarch.png",
+        "desc": "老游戏模拟器，多平台",
+        "remark": []
+    },
+    {
         "category": "资源素材",
         "name": "pexels",
         "url": "https:\/\/www.pexels.com\/zh-cn\/",
@@ -274,7 +282,7 @@
         "category": "资源素材",
         "name": "1music",
         "url": "https:\/\/1music.cc",
-        "logo": ".\/ico\/default.png",
+        "logo": ".\/ico\/1music.png",
         "desc": "可以上传收藏歌曲到webdav",
         "remark": []
     },
