@@ -79,6 +79,58 @@
         "remark": []
     },
     {
+        "category": "影视娱乐",
+        "name": "爱壹帆",
+        "url": "https:\/\/www.iyf.tv\/",
+        "logo": "ico\/aiyifan.ico",
+        "desc": "在线影院",
+        "remark": [
+            "kexue"
+        ]
+    },
+    {
+        "category": "影视娱乐",
+        "name": "tubi",
+        "url": "https:\/\/tubitv.com",
+        "logo": "ico\/tubi.ico",
+        "desc": "美国节点观看，无中文字幕",
+        "remark": [
+            "kexue"
+        ]
+    },
+    {
+        "category": "影视娱乐",
+        "name": "泥视频",
+        "url": "https:\/\/www.nivod.vip\/",
+        "logo": "ico\/www.nivod.vip.ico",
+        "desc": "泥视频",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "毒蛇电影",
+        "url": "https:\/\/www.dushe05.com\/",
+        "logo": ".\/ico\/dushe.ico",
+        "desc": "在线电影",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "可可影视",
+        "url": "https:\/\/www.keke1.app\/",
+        "logo": "ico\/keke.png",
+        "desc": "可可影视",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "SOTVLA网址导航",
+        "url": "https:\/\/www.sotvla.cc\/",
+        "logo": "ico\/www.sotvla.cc.ico",
+        "desc": "好用的视频搜索聚合",
+        "remark": []
+    },
+    {
         "category": "资源素材",
         "name": "pexels",
         "url": "https:\/\/www.pexels.com\/zh-cn\/",
@@ -268,6 +320,22 @@
         "url": "https:\/\/1music.cc",
         "logo": ".\/ico\/1music.png",
         "desc": "可以上传收藏歌曲到webdav",
+        "remark": []
+    },
+    {
+        "category": "资源素材",
+        "name": "资源聚合网站",
+        "url": "https:\/\/fmhy.net\/",
+        "logo": "ico\/fmhy.net.ico",
+        "desc": "资源聚合网站",
+        "remark": []
+    },
+    {
+        "category": "资源素材",
+        "name": "AL影视资源库",
+        "url": "https:\/\/docs.qq.com\/doc\/DTnRUSkVzUWNIZkZV",
+        "logo": "ico\/default.png",
+        "desc": "AL影视资源库",
         "remark": []
     },
     {
