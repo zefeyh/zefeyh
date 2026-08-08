@@ -154,18 +154,8 @@
     },
     {
         "category": "资源素材",
-        "name": "万维维修",
-        "url": "https:\/\/www.rom100.com\/",
-        "logo": ".\/ico\/rom100.ico",
-        "desc": "手机刷机固件",
-        "remark": [
-            "fufei"
-        ]
-    },
-    {
-        "category": "资源素材",
         "name": "安娜的档案",
-        "url": "https:\/\/zh.annas-archive.li\/",
+        "url": "https:\/\/annas-archive.gd\/",
         "logo": ".\/ico\/annas-archive.ico",
         "desc": "完全开放的图书馆",
         "remark": [
@@ -366,14 +356,6 @@
         "url": "https:\/\/www.ip2location.com\/",
         "logo": ".\/ico\/ip2location.ico",
         "desc": "提供IP详细信息查询"
-    },
-    {
-        "category": "AI相关",
-        "name": "火山引擎",
-        "url": "https:\/\/volcengine.com\/",
-        "logo": ".\/ico\/volcengine.png",
-        "desc": "火山引擎",
-        "remark": []
     },
     {
         "category": "工具类",
@@ -942,6 +924,14 @@
         "url": "https:\/\/peiyin.xunfei.cn\/",
         "logo": ".\/ico\/xunfei.ico",
         "desc": "提供文字转语、虚拟人等"
+    },
+    {
+        "category": "AI相关",
+        "name": "火山引擎",
+        "url": "https:\/\/volcengine.com\/",
+        "logo": ".\/ico\/volcengine.png",
+        "desc": "火山引擎",
+        "remark": []
     },
     {
         "category": "AI相关",
