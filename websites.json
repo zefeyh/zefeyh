@@ -18,10 +18,10 @@
     },
     {
         "category": "影视娱乐",
-        "name": "修罗影视",
-        "url": "https:\/\/www.xlysw.ggff.net\/",
+        "name": "雪落影视",
+        "url": "https:\/\/v.xl01.eu.cc",
         "logo": ".\/ico\/xlys.png",
-        "desc": "修罗影视",
+        "desc": "雪落影视",
         "remark": []
     },
     {
@@ -1110,9 +1110,7 @@
         "url": "https:\/\/v2raya.org\/",
         "logo": ".\/ico\/v2ray.png",
         "desc": "跨平台的 V2Ray 客户端",
-        "remark": [
-            "kexue"
-        ]
+        "remark": []
     },
     {
         "category": "网络相关",
