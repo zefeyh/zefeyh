@@ -54,10 +54,10 @@
     },
     {
         "category": "影视娱乐",
-        "name": "布布影视",
-        "url": "https:\/\/bbys.app",
-        "logo": "ico\/qqqys.png",
-        "desc": "布布影视",
+        "name": "多多追剧",
+        "url": "https:\/\/duoduozhuiju.com",
+        "logo": "ico\/323433ssdfd.top.ico",
+        "desc": "多多追剧",
         "remark": [
             "heart"
         ]
@@ -641,6 +641,25 @@
         "url": "https:\/\/browserleaks.com\/",
         "logo": "ico\/browserleaks.com.ico",
         "desc": "各网络工具",
+        "remark": []
+    },
+    {
+        "category": "工具类",
+        "name": "3FUI ",
+        "url": "https:\/\/github.com\/Lake1059\/FFmpegFreeUI",
+        "logo": "ico\/github.png",
+        "desc": "ffmpeg 在 Windows 上的轻度专业交互外壳",
+        "remark": [
+            "windows",
+            "github"
+        ]
+    },
+    {
+        "category": "工具类",
+        "name": "wireshark",
+        "url": "https:\/\/www.wireshark.org\/",
+        "logo": "ico\/www.wireshark.org.ico",
+        "desc": "网络抓包工具",
         "remark": []
     },
     {
