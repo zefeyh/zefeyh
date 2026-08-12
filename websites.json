@@ -693,6 +693,14 @@
         "remark": []
     },
     {
+        "category": "博客论坛",
+        "name": "看雪论坛",
+        "url": "https:\/\/www.kanxue.com\/",
+        "logo": "ico\/www.kanxue.com.ico",
+        "desc": "二进制安全与底层开发社区",
+        "remark": []
+    },
+    {
         "category": "域名空间",
         "name": "edgeone",
         "url": "https:\/\/edgeone.ai\/",
@@ -1198,6 +1206,14 @@
         "url": "https:\/\/ping0.cc",
         "logo": "ico\/ping0.png",
         "desc": "检测ip地址归属",
+        "remark": []
+    },
+    {
+        "category": "网络相关",
+        "name": "exploit-db",
+        "url": "https:\/\/www.exploit-db.com\/",
+        "logo": "ico\/www.exploit-db.com.ico",
+        "desc": "漏洞利用代码(Exploit)数据库",
         "remark": []
     }
 ]
