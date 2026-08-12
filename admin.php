@@ -1,6 +1,6 @@
 <?php
 // 配置
-define('ADMIN_PASSWORD', 'tianliang'); // 设置管理员密码
+define('ADMIN_PASSWORD', 'admin'); // 设置管理员密码
 define('JSON_FILE', 'websites.json');
 define('UPLOAD_DIR', 'ico/');
 define('ALLOWED_IMAGE_TYPES', ['jpg', 'jpeg', 'png', 'gif', 'ico', 'svg']);
