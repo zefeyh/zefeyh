@@ -663,6 +663,14 @@
         "remark": []
     },
     {
+        "category": "工具类",
+        "name": "7zip",
+        "url": "https:\/\/www.7-zip.org\/",
+        "logo": "ico\/www.7-zip.org.ico",
+        "desc": "小巧好用的压缩软件",
+        "remark": []
+    },
+    {
         "category": "博客论坛",
         "name": "廖雪峰",
         "url": "https:\/\/www.liaoxuefeng.com\/",
@@ -1214,6 +1222,22 @@
         "url": "https:\/\/www.exploit-db.com\/",
         "logo": "ico\/www.exploit-db.com.ico",
         "desc": "漏洞利用代码(Exploit)数据库",
+        "remark": []
+    },
+    {
+        "category": "网络相关",
+        "name": "freesocks",
+        "url": "https:\/\/freesocks.org\/",
+        "logo": "ico\/freesocks.png",
+        "desc": "开源网络代理服务",
+        "remark": []
+    },
+    {
+        "category": "网络相关",
+        "name": "TunNet",
+        "url": "https:\/\/www.nexttun.net\/",
+        "logo": "ico\/www.nexttun.net.ico",
+        "desc": "免费VPN客户端",
         "remark": []
     }
 ]
