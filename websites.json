@@ -1149,14 +1149,6 @@
     },
     {
         "category": "网络相关",
-        "name": "v2raya",
-        "url": "https:\/\/v2raya.org\/",
-        "logo": ".\/ico\/v2ray.png",
-        "desc": "跨平台的 V2Ray 客户端",
-        "remark": []
-    },
-    {
-        "category": "网络相关",
         "name": "FOFA网络空间测绘",
         "url": "https:\/\/fofa.info",
         "logo": ".\/ico\/fofa.ico",
