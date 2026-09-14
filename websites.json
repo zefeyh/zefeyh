@@ -679,6 +679,14 @@
         "remark": []
     },
     {
+        "category": "工具类",
+        "name": "hoppscotch",
+        "url": "https:\/\/hoppscotch.io\/",
+        "logo": "ico\/hoppscotch.io.ico",
+        "desc": "API调试工具",
+        "remark": []
+    },
+    {
         "category": "博客论坛",
         "name": "廖雪峰",
         "url": "https:\/\/www.liaoxuefeng.com\/",
@@ -831,7 +839,9 @@
         "url": "https:\/\/wispbyte.com",
         "logo": "ico\/wispbyte.png",
         "desc": "一个免费容器",
-        "remark": []
+        "remark": [
+            "kexue"
+        ]
     },
     {
         "category": "域名空间",
