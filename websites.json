@@ -117,7 +117,7 @@
     {
         "category": "影视娱乐",
         "name": "可可影视",
-        "url": "https:\/\/www.keke1.app\/",
+        "url": "https:\/\/www.keke2.app\/",
         "logo": "ico\/keke.png",
         "desc": "可可影视",
         "remark": []
@@ -318,7 +318,9 @@
         "url": "https:\/\/1music.cc",
         "logo": ".\/ico\/1music.png",
         "desc": "可以上传收藏歌曲到webdav",
-        "remark": []
+        "remark": [
+            "kexue"
+        ]
     },
     {
         "category": "资源素材",
@@ -1134,6 +1136,22 @@
         "url": "https:\/\/build.nvidia.com\/",
         "logo": "ico\/build.nvidia.com.ico",
         "desc": "英伟达大模型集合",
+        "remark": []
+    },
+    {
+        "category": "AI相关",
+        "name": "runninghub",
+        "url": "https:\/\/www.runninghub.cn\/",
+        "logo": "ico\/www.runninghub.cn.ico",
+        "desc": "AI内容创作平台，云端ComfyUI",
+        "remark": []
+    },
+    {
+        "category": "AI相关",
+        "name": "哩布哩布",
+        "url": "https:\/\/www.liblib.art\/",
+        "logo": "ico\/www.liblib.art.ico",
+        "desc": "一站式ai创作平台",
         "remark": []
     },
     {
