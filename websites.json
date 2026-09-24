@@ -1275,5 +1275,13 @@
         "logo": "ico\/www.nexttun.net.ico",
         "desc": "免费VPN客户端",
         "remark": []
+    },
+    {
+        "category": "网络相关",
+        "name": "kali",
+        "url": "https:\/\/kali.org",
+        "logo": "ico\/kali.org.ico",
+        "desc": "懂得都懂",
+        "remark": []
     }
 ]
