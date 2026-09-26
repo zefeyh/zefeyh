@@ -927,14 +927,6 @@
     },
     {
         "category": "域名空间",
-        "name": "katabump.com",
-        "url": "https:\/\/dashboard.katabump.com\/dashboard",
-        "logo": "ico\/katabump.png",
-        "desc": "免费二级域名和服务器",
-        "remark": []
-    },
-    {
-        "category": "域名空间",
         "name": "tinkerhost",
         "url": "https:\/\/tinkerhost.net\/",
         "logo": "ico\/tinkerhost.net.ico",
