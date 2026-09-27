@@ -260,9 +260,7 @@
         "url": "https:\/\/libgen.ac\/",
         "logo": "ico\/libgen.png",
         "desc": "优质电子书库",
-        "remark": [
-            "kexue"
-        ]
+        "remark": []
     },
     {
         "category": "资源素材",
@@ -815,14 +813,6 @@
         "url": "https:\/\/www.superbed.cn\/",
         "logo": "ico\/superbed.ico",
         "desc": "高速稳定的图片上传和外链服务",
-        "remark": []
-    },
-    {
-        "category": "域名空间",
-        "name": "claw云",
-        "url": "https:\/\/run.claw.cloud\/",
-        "logo": "ico\/run-claw-cloud.ico",
-        "desc": "docker部署，每月$5额度",
         "remark": []
     },
     {
