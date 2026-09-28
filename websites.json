@@ -18,14 +18,6 @@
     },
     {
         "category": "影视娱乐",
-        "name": "雪落影视",
-        "url": "https:\/\/v.xl01.cc.ua\/",
-        "logo": ".\/ico\/xlys.png",
-        "desc": "雪落影视",
-        "remark": []
-    },
-    {
-        "category": "影视娱乐",
         "name": "饭太硬",
         "url": "https:\/\/www.xn--sss604efuw.cc\/",
         "logo": ".\/ico\/fan.ico",
@@ -137,6 +129,16 @@
         "logo": "ico\/fdzys.net.ico",
         "desc": "饭搭子影视",
         "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "华视影院",
+        "url": "https:\/\/huavod.net",
+        "logo": "ico\/huavod.ico",
+        "desc": "华视影院",
+        "remark": [
+            "kexue"
+        ]
     },
     {
         "category": "资源素材",
