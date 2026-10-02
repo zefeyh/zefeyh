@@ -141,6 +141,54 @@
         ]
     },
     {
+        "category": "影视娱乐",
+        "name": "追影",
+        "url": "https:\/\/zhuiying3.cc\/",
+        "logo": "ico\/zhuiying.png",
+        "desc": "追影",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "片库",
+        "url": "https:\/\/4k01.pianku.online\/",
+        "logo": "ico\/4k01.pianku.online.ico",
+        "desc": "片库",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "剧OK",
+        "url": "https:\/\/www.juok.top\/",
+        "logo": "ico\/juok.png",
+        "desc": "剧OK",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "4K影视",
+        "url": "https:\/\/www.4kvm.top\/",
+        "logo": "ico\/4kvm.png",
+        "desc": "4K影视",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "可可影视",
+        "url": "https:\/\/www.kkys02.com\/",
+        "logo": "ico\/keke.png",
+        "desc": "可可影视",
+        "remark": []
+    },
+    {
+        "category": "影视娱乐",
+        "name": "两个BT",
+        "url": "https:\/\/www.bttwo.me\/",
+        "logo": "ico\/bttwo.ico",
+        "desc": "两个BT",
+        "remark": []
+    },
+    {
         "category": "资源素材",
         "name": "pexels",
         "url": "https:\/\/www.pexels.com\/zh-cn\/",
@@ -1282,6 +1330,14 @@
         "url": "https:\/\/kali.org",
         "logo": "ico\/kali.org.ico",
         "desc": "懂得都懂",
+        "remark": []
+    },
+    {
+        "category": "网络相关",
+        "name": "dns泄露检测",
+        "url": "https:\/\/ipleak.net\/",
+        "logo": "ico\/ipleak.net.ico",
+        "desc": "dns泄露检测",
         "remark": []
     }
 ]
