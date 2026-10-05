@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="theme-color" content="#ffcf32" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data: https:; connect-src 'self' https: wss:; media-src 'self' blob: https:; worker-src 'self' blob:; frame-src 'self' https:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+    />
+    <meta name="application-name" content="懂片帝" />
+    <meta
+      name="description"
+      content="懂片帝AI（懂片AI）是懂片帝推出的智能影视助手，支持AI找电影、电视剧、短剧、动漫和综艺，发现片单并播放可看内容。"
+    />
+    <meta
+      name="keywords"
+      content="懂片帝,懂片帝AI,懂片AI,AI找片,AI影视搜索,AI电影搜索,AI电视剧搜索,短剧搜索,电影搜索,电视剧搜索,动漫搜索,综艺搜索,片单发现"
+    />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="懂片帝" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.webmanifest?v=20260829-dongpiandi-logo-v2" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/app-icon-64.png?v=20260829-dongpiandi-logo-v2" />
+    <link rel="apple-touch-icon" href="/assets/app-icon-180.png?v=20260829-dongpiandi-logo-v2" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:site_name" content="懂片帝" />
+    <meta property="og:title" content="懂片帝AI - 懂片AI找片、片单与播放" />
+    <meta
+      property="og:description"
+      content="懂片帝AI（懂片AI）帮你找电影、电视剧、短剧、动漫和综艺，发现片单并播放可看内容。"
+    />
+    <meta property="og:image" content="/assets/app-icon-512.png?v=20260829-dongpiandi-logo-v2" />
+    <meta property="og:image:alt" content="懂片帝应用图标" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="懂片帝AI - 懂片AI找片、片单与播放" />
+    <meta
+      name="twitter:description"
+      content="懂片帝AI（懂片AI）帮你找电影、电视剧、短剧、动漫和综艺，发现片单并播放可看内容。"
+    />
+    <meta name="twitter:image" content="/assets/app-icon-512.png?v=20260829-dongpiandi-logo-v2" />
+    <title>懂片帝AI - 懂片AI找片、片单与播放</title>
+    <!-- Google tag (gtag.js) -->
+    <script src="/app-bootstrap.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1BW8M3J90"></script>
+    <script type="module" crossorigin src="/assets/main-D7nwqXS5.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vite-runtime-mxn4OsD4.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-P5XnYvWb.js">
+    <link rel="modulepreload" crossorigin href="/assets/native-environment-ChodKNAD.js">
+    <link rel="modulepreload" crossorigin href="/assets/movie-card-runtime-Ur137HwM.js">
+    <link rel="modulepreload" crossorigin href="/assets/navigation-runtime-Dw-8DVQD.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-D9xnxi5G.js">
+    <link rel="modulepreload" crossorigin href="/assets/radix-ui-aX-OfnFH.js">
+    <link rel="modulepreload" crossorigin href="/assets/assistant-ui-primitives-Dt5pMOxc.js">
+    <link rel="stylesheet" crossorigin href="/assets/main-DAlvErPS.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
