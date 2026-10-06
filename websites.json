@@ -761,6 +761,14 @@
         "remark": []
     },
     {
+        "category": "工具类",
+        "name": "rufus",
+        "url": "https:\/\/rufus.ie\/zh\/",
+        "logo": "ico\/rufus.ie.ico",
+        "desc": "轻松创建 USB 启动盘",
+        "remark": []
+    },
+    {
         "category": "博客论坛",
         "name": "廖雪峰",
         "url": "https:\/\/www.liaoxuefeng.com\/",
