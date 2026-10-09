@@ -807,6 +807,14 @@
         "remark": []
     },
     {
+        "category": "博客论坛",
+        "name": "掘金",
+        "url": "https:\/\/juejin.cn\/",
+        "logo": "ico\/juejin.cn.ico",
+        "desc": "个人blog好地方",
+        "remark": []
+    },
+    {
         "category": "域名空间",
         "name": "edgeone",
         "url": "https:\/\/edgeone.ai\/",
@@ -1003,6 +1011,14 @@
         "url": "https:\/\/beget.com\/en",
         "logo": "ico\/beget.com.ico",
         "desc": "免费虚拟主机服务",
+        "remark": []
+    },
+    {
+        "category": "域名空间",
+        "name": "dnshe",
+        "url": "https:\/\/www.dnshe.com\/",
+        "logo": "ico\/www.dnshe.com.ico",
+        "desc": "免费二级域名",
         "remark": []
     },
     {
