@@ -174,14 +174,6 @@
     },
     {
         "category": "影视娱乐",
-        "name": "可可影视",
-        "url": "https:\/\/www.kkys02.com\/",
-        "logo": "ico\/keke.png",
-        "desc": "可可影视",
-        "remark": []
-    },
-    {
-        "category": "影视娱乐",
         "name": "两个BT",
         "url": "https:\/\/www.bttwo.me\/",
         "logo": "ico\/bttwo.ico",
@@ -617,7 +609,7 @@
         "category": "工具类",
         "name": "docker镜像监控",
         "url": "https:\/\/status.anye.xyz\/",
-        "logo": ".\/ico\/zefe.ico",
+        "logo": ".\/ico\/docker.png",
         "desc": "docker镜像监控",
         "remark": []
     },
