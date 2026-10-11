@@ -1235,6 +1235,16 @@
         "remark": []
     },
     {
+        "category": "AI相关",
+        "name": "Nano Banana pro",
+        "url": "https:\/\/www.bananapro.site\/zh",
+        "logo": "ico\/www.bananapro.site.ico",
+        "desc": "专业级图片生成",
+        "remark": [
+            "fufei"
+        ]
+    },
+    {
         "category": "网络相关",
         "name": "haveibeenpwned",
         "url": "https:\/\/haveibeenpwned.com\/",
