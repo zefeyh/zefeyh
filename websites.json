@@ -395,6 +395,30 @@
         "remark": []
     },
     {
+        "category": "资源素材",
+        "name": "GD音乐",
+        "url": "https:\/\/music.gdstudio.org",
+        "logo": "ico\/music.gdstudio.org.ico",
+        "desc": "满血版org换成xyz",
+        "remark": []
+    },
+    {
+        "category": "资源素材",
+        "name": "无损音乐下载",
+        "url": "https:\/\/flac.music.hi.cn\/",
+        "logo": "ico\/flac.png",
+        "desc": "无损音乐下载",
+        "remark": []
+    },
+    {
+        "category": "资源素材",
+        "name": "24bit无损",
+        "url": "https:\/\/www.24bit.net\/",
+        "logo": "ico\/www.24bit.net.ico",
+        "desc": "无损音乐下载",
+        "remark": []
+    },
+    {
         "category": "工具类",
         "name": "有道翻译",
         "url": "https:\/\/fanyi.youdao.com\/",
