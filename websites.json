@@ -793,6 +793,14 @@
         "remark": []
     },
     {
+        "category": "工具类",
+        "name": "wokwi",
+        "url": "https:\/\/wokwi.com\/",
+        "logo": "ico\/wokwi.png",
+        "desc": "esp32模拟器",
+        "remark": []
+    },
+    {
         "category": "博客论坛",
         "name": "廖雪峰",
         "url": "https:\/\/www.liaoxuefeng.com\/",
@@ -962,7 +970,7 @@
         "name": "railway",
         "url": "https:\/\/railway.com\/",
         "logo": "ico\/railway.png",
-        "desc": "免费1个月，删除账号可循环",
+        "desc": "免费1个月",
         "remark": []
     },
     {
@@ -1275,6 +1283,14 @@
         "remark": [
             "fufei"
         ]
+    },
+    {
+        "category": "AI相关",
+        "name": "workbuddy",
+        "url": "https:\/\/www.workbuddy.cn\/",
+        "logo": "ico\/workbuddy.png",
+        "desc": "腾讯出品的全场景 AI 办公工作台",
+        "remark": []
     },
     {
         "category": "网络相关",
