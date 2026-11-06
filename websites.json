@@ -354,14 +354,6 @@
     },
     {
         "category": "资源素材",
-        "name": "1337x",
-        "url": "https:\/\/www.1377x.to\/",
-        "logo": "ico\/1337x.png",
-        "desc": "bt资源",
-        "remark": []
-    },
-    {
-        "category": "资源素材",
         "name": "中科大镜像源",
         "url": "https:\/\/mirrors.ustc.edu.cn\/",
         "logo": "ico\/ustc.png",
@@ -416,6 +408,14 @@
         "url": "https:\/\/www.24bit.net\/",
         "logo": "ico\/www.24bit.net.ico",
         "desc": "无损音乐下载",
+        "remark": []
+    },
+    {
+        "category": "资源素材",
+        "name": "bootcdn",
+        "url": "https:\/\/www.bootcdn.cn\/",
+        "logo": "ico\/www.bootcdn.cn.ico",
+        "desc": "前端开源项目 CDN 加速服务",
         "remark": []
     },
     {
@@ -1352,14 +1352,6 @@
     },
     {
         "category": "网络相关",
-        "name": "formsubmit",
-        "url": "https:\/\/formsubmit.co\/",
-        "logo": "ico\/formsubmit.png",
-        "desc": "表单提交服务，信息发到邮箱，第一次需激活域名地址",
-        "remark": []
-    },
-    {
-        "category": "网络相关",
         "name": "节点生成",
         "url": "https:\/\/yonggekkk.github.io\/argosbx\/",
         "logo": "ico\/github.png",
@@ -1377,7 +1369,7 @@
     {
         "category": "网络相关",
         "name": "redteago",
-        "url": "https:\/\/esim.redteago.com\/zh-CN",
+        "url": "https:\/\/redteago.com\/",
         "logo": "ico\/redteago.png",
         "desc": "esim数据流量推荐，出国必备",
         "remark": []
