@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>容器镜像监控</title>
+  <meta name="description" content="境内 Docker Hub、GHCR、Quay、MCR 等容器镜像加速器的可用性与延迟监控，按小时检测，并一键生成 Docker、Podman、Containerd、Nerdctl、1Panel 配置。">
+  <!-- 与 style.css 里 --c-bg 的浅色/深色取值对应 -->
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f9fc">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#11171b">
+  <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="shortcut icon" type="image/png" href="/logo.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="容器镜像监控">
+  <meta property="og:title" content="容器镜像监控">
+  <meta property="og:description" content="境内容器镜像加速器可用性监控与配置生成器">
+  <meta property="og:image" content="/logo.png">
+  <meta name="twitter:card" content="summary">
+
+  <!-- 在样式与 JS 加载前定妥主题，避免深色模式用户看到白底闪烁 -->
+  <script>
+    (function () {
+      try {
+        var m = localStorage.getItem('theme-mode') || 'system'
+        var dark = m === 'dark' || (m === 'system' &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+        if (dark) document.documentElement.classList.add('dark')
+      } catch (e) {}
+    })()
+  </script>
+  <script type="module" crossorigin src="/assets/index-B-gpRlfE.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CacdCqta.css">
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>

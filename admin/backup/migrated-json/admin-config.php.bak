@@ -1,0 +1,16 @@
+<?php
+/**
+ * 网址导航后台配置（由 admin.php 自动维护，请勿手工编辑）
+ *
+ * password_hash 为 PBKDF2-SHA256 派生值，不包含明文密码。
+ * 忘记密码时可删除本文件，重新访问 admin.php 进入首次安装流程重新设置。
+ * 也可以在后台「系统设置 → 修改密码」中在线修改。
+ */
+return array(
+  'password_hash' => 'pbkdf2_sha256$210000$9697e5b1ad3785377686aec0bb4f2ba3$12872dba88b044c346cea033a8e5559ec6efa6d3431925c55fc887806788977e',
+  'auto_generate' => true,
+  'output_file' => 'index.html',
+  'session_idle' => 1800,
+  'site_title' => '梁老师网址导航',
+  'default_password' => true,
+);

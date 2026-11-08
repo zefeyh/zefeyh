@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站Favicon获取工具</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            margin-top: 1rem;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .description {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .input-group {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+        
+        input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px 0 0 10px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus {
+            border-color: #3498db;
+        }
+        
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #2980b9;
+        }
+        
+        .result {
+            display: none;
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: #f8f9fa;
+            margin-top: 1rem;
+        }
+        
+        .icon-preview {
+            display: inline-block;
+            width: 128px;
+            height: 128px;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            background-color: white;
+        }
+        
+        .icon-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .icon-info {
+            margin-bottom: 1.5rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #2ecc71;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: #27ae60;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error {
+            display: none;
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: #ffeaa7;
+            color: #d63031;
+            margin-top: 1rem;
+        }
+        
+        .methods {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .methods h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .methods ul {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+        
+        .methods li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        
+        .methods li::before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .input-group {
+                flex-direction: column;
+            }
+            
+            input {
+                border-radius: 10px;
+                margin-bottom: 0.5rem;
+            }
+            
+            button {
+                border-radius: 10px;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>网站Favicon获取工具</h1>
+        <p class="description">输入网站URL，获取其Favicon图标。支持多种获取方法，并提供下载功能。</p>
+        
+        <div class="input-group">
+            <input type="text" id="urlInput" placeholder="请输入完整的网站URL (例如: https://example.com)" value="https://www.google.com">
+            <button id="getFaviconBtn">获取Favicon</button>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>正在获取Favicon，请稍候...</p>
+        </div>
+        
+        <div class="result" id="result">
+            <div class="icon-preview">
+                <img id="faviconImg" src="" alt="Favicon">
+            </div>
+            <div class="icon-info">
+                <p>图标尺寸: <span id="iconSize">0×0</span> 像素</p>
+                <p>来源: <span id="iconSource">未知</span></p>
+            </div>
+            <a href="#" id="downloadLink" class="download-btn">下载Favicon</a>
+        </div>
+        
+        <div class="error" id="error">
+            <p>无法获取该网站的Favicon，请检查URL是否正确或尝试其他网站。</p>
+        </div>
+        
+        <div class="methods">
+            <h3>支持的获取方法</h3>
+            <ul>
+                <li>直接访问 /favicon.ico</li>
+                <li>Google Favicon服务</li>
+                <li>解析HTML中的link标签</li>
+                <li>尝试多种常见路径</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlInput = document.getElementById('urlInput');
+            const getFaviconBtn = document.getElementById('getFaviconBtn');
+            const loading = document.getElementById('loading');
+            const result = document.getElementById('result');
+            const error = document.getElementById('error');
+            const faviconImg = document.getElementById('faviconImg');
+            const iconSize = document.getElementById('iconSize');
+            const iconSource = document.getElementById('iconSource');
+            const downloadLink = document.getElementById('downloadLink');
+            
+            // 获取favicon的函数
+            async function getFavicon(url) {
+                // 显示加载状态
+                loading.style.display = 'block';
+                result.style.display = 'none';
+                error.style.display = 'none';
+                
+                try {
+                    // 验证URL格式
+                    let validUrl = url;
+                    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                        validUrl = 'https://' + url;
+                    }
+                    
+                    const domain = new URL(validUrl).hostname;
+                    
+                    // 方法1: 直接访问 /favicon.ico
+                    let faviconUrl = `${validUrl}/favicon.ico`;
+                    let source = "直接访问 /favicon.ico";
+                    
+                    // 方法2: 使用Google Favicon服务
+                    const googleFaviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+                    
+                    // 方法3: 尝试常见路径
+                    const commonPaths = [
+                        '/favicon.ico',
+                        '/apple-touch-icon.png',
+                        '/apple-touch-icon-precomposed.png'
+                    ];
+                    
+                    // 首先尝试Google服务
+                    if (await checkImageExists(googleFaviconUrl)) {
+                        faviconUrl = googleFaviconUrl;
+                        source = "Google Favicon服务";
+                    } 
+                    // 然后尝试直接访问
+                    else if (await checkImageExists(`${validUrl}/favicon.ico`)) {
+                        faviconUrl = `${validUrl}/favicon.ico`;
+                        source = "直接访问 /favicon.ico";
+                    } 
+                    // 最后尝试常见路径
+                    else {
+                        for (const path of commonPaths) {
+                            const testUrl = `${validUrl}${path}`;
+                            if (await checkImageExists(testUrl)) {
+                                faviconUrl = testUrl;
+                                source = `路径: ${path}`;
+                                break;
+                            }
+                        }
+                    }
+                    
+                    // 显示结果
+                    faviconImg.src = faviconUrl;
+                    faviconImg.onload = function() {
+                        iconSize.textContent = `${this.naturalWidth}×${this.naturalHeight}`;
+                        iconSource.textContent = source;
+                        
+                        // 设置下载链接
+                        downloadLink.href = faviconUrl;
+                        downloadLink.download = `favicon-${domain}.${getFileExtension(faviconUrl)}`;
+                        
+                        loading.style.display = 'none';
+                        result.style.display = 'block';
+                    };
+                    
+                    faviconImg.onerror = function() {
+                        throw new Error('无法加载图标');
+                    };
+                    
+                } catch (err) {
+                    console.error('获取Favicon时出错:', err);
+                    loading.style.display = 'none';
+                    error.style.display = 'block';
+                }
+            }
+            
+            // 检查图片是否存在
+            function checkImageExists(url) {
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    img.onload = () => resolve(true);
+                    img.onerror = () => resolve(false);
+                    img.src = url;
+                });
+            }
+            
+            // 获取文件扩展名
+            function getFileExtension(url) {
+                return url.split('.').pop().split(/\#|\?/)[0];
+            }
+            
+            // 点击获取按钮
+            getFaviconBtn.addEventListener('click', function() {
+                const url = urlInput.value.trim();
+                if (url) {
+                    getFavicon(url);
+                } else {
+                    alert('请输入有效的URL');
+                }
+            });
+            
+            // 按Enter键触发获取
+            urlInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    getFaviconBtn.click();
+                }
+            });
+            
+            // 初始加载示例
+            getFavicon('https://www.google.com');
+        });
+    </script>
+</body>
+</html>

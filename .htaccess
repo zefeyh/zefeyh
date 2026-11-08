@@ -1,0 +1,41 @@
+# 网址导航 —— 项目根目录规则
+#
+# 推荐部署：把站点根目录（DocumentRoot）直接指向 public/，此时本文件不会被读取，
+#           后台实现与数据库完全位于 Web 根之外，安全性最佳。
+# 兼容部署：若主机只能把根目录指向本目录，以下重写规则会保持原有访问地址不变：
+#           /            → public/index.html
+#           /admin.php   → public/admin.php
+#           /css|ico|fonts/...、/favicon.ico、/getico.html → public/ 下同名资源
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 私有目录：admin/（程序、模板、数据库、快照）禁止任何 Web 直接访问
+    RewriteRule ^admin(/|$) - [F,L,NC]
+    # 数据库与备份文件，无论放在哪里都不允许下载
+    RewriteRule \.(sqlite|sqlite3|db|bak|old|log|sql|swp|tmp)$ - [F,L,NC]
+
+    # 后台入口保持 /admin.php
+    RewriteRule ^admin\.php$ public/admin.php [L,QSA]
+
+    # 前台首页
+    RewriteRule ^$ public/index.html [L]
+    RewriteRule ^index\.html$ public/index.html [L]
+
+    # 静态资源
+    RewriteRule ^(css|ico|fonts)/(.+)$ public/$1/$2 [L]
+    RewriteRule ^(favicon\.ico|getico\.html)$ public/$1 [L]
+</IfModule>
+
+# 即使未启用 mod_rewrite，也用授权模块兜底拦截敏感文件/目录
+<FilesMatch "\.(sqlite|sqlite3|db|bak|old|log|sql|swp|tmp)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
