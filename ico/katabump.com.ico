@@ -1,0 +1,17 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var lang = navigator.language || navigator.userLanguage;
+        var currentPath = window.location.pathname;
+
+        var targetLangPath = "";
+        if (lang.startsWith("fr")) {
+            targetLangPath = "/fr";
+        } else if (lang.startsWith("en")) {
+            targetLangPath = "/en";
+        } else {
+            targetLangPath = "/en";
+        }
+
+        window.location.href = targetLangPath + currentPath;
+    });
+</script>

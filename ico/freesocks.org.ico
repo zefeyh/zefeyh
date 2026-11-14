@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Never leak where a user came from / where they go. Reinforces the
+         no-third-party posture and protects users whose traffic is inspected. -->
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      name="description"
+      content="FreeSocks - free, open & uncensored proxies for users in heavily-censored regions"
+    />
+    <title>FreeSocks</title>
+
+    <!--
+      Social preview card (Open Graph + Twitter). Crawlers don't run JS, so
+      these live in the static HTML - one site-wide card for every route (the
+      SPA has no per-route SSR). og:image must be ABSOLUTE, and it is
+      deliberately BUILD-STABLE (the canonical prod host hardcoded, never a
+      Caddy host placeholder): the E2EE verifier pins the served index.html's
+      bytes and normalizes ONLY the csp-nonce tag below, so any other
+      per-request template expansion would make every legitimate bundle hash
+      as tampered in the store-delivered extension. Beta therefore advertises
+      the prod image URL - same committed file either way.
+      The image is public/og.png (1200x630); its committed source is
+      scripts/og-card.html - regenerate there when the brand copy changes.
+      og:url is deliberately omitted: crawlers fall back to the fetched URL,
+      which is per-route correct, while a hardcoded value would canonicalize
+      every share to one page.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FreeSocks" />
+    <meta property="og:title" content="FreeSocks - A VPN for freedom" />
+    <meta
+      property="og:description"
+      content="Free, open & uncensored proxies for users in heavily-censored regions."
+    />
+    <meta property="og:image" content="https://freesocks.org/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="FreeSocks - A VPN for freedom" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!--
+      Per-request CSP script nonce. Caddy's templates module expands the
+      http.request.uuid placeholder below to the SAME UUID it puts in the
+      response's script-src nonce header, so this value matches the enforcing
+      CSP. main.ts reads it into window.CAP_SCRIPT_NONCE so the Cap captcha's
+      instrumentation challenge (a server-supplied inline script in a sandboxed
+      iframe srcdoc) runs WITHOUT relaxing the strict no-inline CSP. Single-
+      quoted so the inner quotes don't truncate the attribute.
+
+      IMPORTANT: this whole file is run through Caddy templates, so it must
+      contain NO other Go-template action sequences anywhere (comments
+      included) — only the placeholder below. That is also a VERIFIER
+      constraint, not just hygiene: the E2EE verifier pins this file's served
+      bytes and normalizes exactly this one csp-nonce tag
+      (scripts/gen-verifier-pin.mjs + verifier-extension), so any additional
+      per-request expansion would flag every legitimate bundle as tampered.
+      Served outside Caddy (vite dev / preview) the attribute stays the
+      literal placeholder text; main.ts ignores that, and dev has no
+      enforcing CSP anyway.
+    -->
+    <meta name="csp-nonce" content='d0ec6aed-c15e-445b-b72b-b88ea2cfcd21' />
+
+    <!--
+      FOUC-prevention script. Runs synchronously before paint, BEFORE the
+      Vite bundle even starts parsing, so the user never sees a flash of
+      the wrong theme. mode-watcher itself injects a similar script via
+      <svelte:head> at runtime, but that fires too late in a pure SPA:
+      the <html class="..."> needs to be correct on the first paint, not
+      after the bundle mounts.
+
+      Without this, `<html class="dark">` was hardcoded on the document and
+      light-mode users saw a dark-mode flash on every load, making the
+      light theme feel "broken" even though the toggle did update the class.
+
+      Logic mirrors mode-watcher's `setInitialMode`:
+        1. Read mode-watcher-mode from localStorage; default to 'dark'.
+        2. Resolve 'system' against the OS preference.
+        3. Add or remove the `dark` class on <html> accordingly.
+        4. Set `color-scheme` so native form widgets and scrollbars match.
+
+      Keep the storage key (`mode-watcher-mode`) and class name (`dark`) in
+      sync with the mode-watcher config in App.svelte. If you change either
+      there, change them here too.
+
+      The logic lives in /public/theme-init.js (an external same-origin script,
+      not inline) so a strict CSP `script-src 'self'` can be enforced in prod.
+    -->
+    <script src="/theme-init.js" integrity="sha384-nLvFzVo8cXupvpWQzUoK/aD1n6jBzeqJRsBxjEnwj8556Q+6qux1AdzLgdrR88bx"></script>
+
+    <!--
+      Fonts (Inter for body, Inter Tight for display headings, JetBrains
+      Mono for code) ship bundled with the SPA via @fontsource/* (see
+      src/client/main.ts for the imports). We deliberately do NOT preconnect
+      to fonts.googleapis.com or fonts.gstatic.com from this document. No
+      third-party host should be contacted by the browser to render this
+      page; everything is served from our own origin.
+    -->
+    <script type="importmap">{"integrity":{"/assets/attributes-BGV8Yjfd.js":"sha384-Mz8WOcGCMf6ZMqjCemtomHXJhIRp1j1r9GScEvYlgCNbVJoT8mbnShbzwjZ8zEig","/assets/scales.svelte-DsQREeJP.js":"sha384-8hXEzZxkIqr2+c+jbO8V1mFB7WTzp4vKgke0rznzkVvQGjJdjIWghtc8BvFQN0P6","/assets/Bar-C5hC52rF.js":"sha384-+yWo84mbWDBfLfAKkygZMvQZVCHsbxCGu81jHlriIbY+ax7gIdh/nz1dTAtn5Nvw","/assets/chart-BPTUUmFU.js":"sha384-A4mJ6F1Up+RRFrsBBLn1pwUvjW0LPXzl/c5U6bPVi7ez3DtkRtoGBYnEDE95Sstx","/assets/Bar.html-BA4mRCtH.js":"sha384-2Ue1kDRA9PPbOO8Lcbsne7Sbx6UAm2n1bQ1/RjRdxsNVdWwSCn4lobLaGV2kAVpr","/assets/motion.svelte-CG_2D_su.js":"sha384-BZIl8lNbJc/iR/HJmmlbAVWCzKiQ53VnOltnz1laxo/7hg4rZf7dC2+dM7sd3fva","/assets/src-DkTtsuBk.js":"sha384-DSv6qrKuRwAEqY2urTTC7EelJZzc2TBCE7f67QtoktG2K/JJrHhjro0rprg42YG7","/assets/group-DshTJ_Yp.js":"sha384-pV7ZWeO7Qpb+Z9KTQ6wsLzeW5q8RsTq6CEt1FpA6wlkytQ1H+dCi85kGQkaHeBDm","/assets/Spline-CP7s1hKW.js":"sha384-rSFxpfEui13KeXWb/cfKcd8vZRg8YJsJTYJ0RaLLNxHeD++s5QzzxFQhn8WlH98E","/assets/e2ee-CFm8f8pP.js":"sha384-bXX9Io8SVB3U3qc+VyuyHrZKy0mSqbQs5xGK4Nxv5gUCUD7AyDVd5sa4jMXDOtfb","/assets/Rect.html-C_er30Ot.js":"sha384-f/1/7lQx+R1QkpBXq7+Cf2enFz5s5aywG4tOA0gIsb4bE7+DHPThhBYMBYtN+0py","/assets/pointRadial-BR2LaRms.js":"sha384-uCIaAGfiNUevENk2x7z55BVXbzgja8pXvS38OCMsGh3AoGQJWSIvF2zBXvGsQ3M1","/assets/tooltip-B2Kfiznu.js":"sha384-fq0Z07xZDRUtWjAazMylzebgCbaDoe8YgR5W4PiyyDyV14/0Z2Egyk/01j3bfW8r","/assets/path-DHHgY54x.js":"sha384-Q/J6qsO37/xGZw5uCCDmzyxVEZUyER+G1Kc2E00HyAI0JDukVoQjUe1WlCevIado","/assets/index-client-CtUE6PLo.js":"sha384-goLC15Ux5q8eNzxrpP7Z6EsByk7Srxm41ifuiSDVVXoWXARYXTaujjzQQdMBkD4U","/assets/pako_inflate.min-DFjmC4Gb.js":"sha384-taEjHL+GUvC8IhXeCaTNUxz3O8ItsajGFLDFj4v/VJvM24HU36qP/6sRpuAGGfeT","/assets/Line.html-IwhoKOYz.js":"sha384-aoDhitz7dKDmrRaNm4hFvU7QiOqrpHGW9CDYZJ2Mib0pD3fUWS4oceYlVN3myKap","/assets/Circle.html-C_zg2I_G.js":"sha384-XllExfKawBzPSFZRGiNl5Odjs/c3sPKvWky5X3+LZ9nWC5ziHEHPQu2CX1eCLqyr","/assets/array-B5KRA4hC.js":"sha384-dh61j1/GYAZeJA04YDGc+vCnEQLL2T01gOFUyWum5H0IiiCINwlkh4lumdIlqAOA","/assets/band-DWJc1FpT.js":"sha384-9OAHhHtH/SDNskNo4yyYQt8+zJK4sfoDsCPOoVIfjJIyJtGsyzjgjmRyY19wgbLq","/assets/index-C_EEeOdR.js":"sha384-JFgggdGhX33rMy8VPJrdJXH6JKeWL4emv1wlr/+X6U+gCgd5K4OHRhD/VEAOLVBI","/assets/TransformContext-CD61c31a.js":"sha384-Rk47LwMTbhlFYyi6ybV3fez3ohYniDFU33Oc3da9CnqRvAwvPc9wZbtyL/LoD5Up","/assets/Text.html-CYCZM4aL.js":"sha384-yuDp2fnLXFK21r7CopVBMfhwWsmqzGkc4inZNeyb+UZ1+fE04ov/F9B431kL2shC","/assets/path-Dr6w-gCE.js":"sha384-KI/+lotCZXpfm9yYoCusiXcy18ma8OqpgZ7deiMNe1EskaoeS8fhamQQYD8pUZCJ","/assets/centroid-DjGAVJ8W.js":"sha384-sBv6ERHhBfht3fHCGJHDcplFWr9YNAtlJkGMpQJQV0bgyjIaIAx0k1KFdwkgWkUt","/assets/types-Dfvzj6n2.js":"sha384-fnl2lzDJBHVPI0NYnrEv7IyH3xtsk61HKqFbKgzA1ChPc9t+reend5/cAh4vwFEk","/assets/Legend-BSvk1HOQ.js":"sha384-57NHY4JmxafeKbtlhO2IScukOPezcWzP3J59nSF2ixvUXr67YEFUIqAoN+OEFsDs","/assets/brush.svelte-BW7FL2F9.js":"sha384-lAlu9fOLorheU8PW4KlNuWryioSdcdsel91DLcfYajtZaxICfnBLwUXHin7NTmRf","/assets/min-CCch3uox.js":"sha384-Il/fdWUCHs3lbI24Xftmxpy7flTUhHIMkry9pyfIEQeLN9LsOddgmkTxWRrvh0Pw","/assets/ChartAnnotations-B3gXR3kW.js":"sha384-N/0EWi0DnMwrpj8Ac6beAVe9zJXo52rX7o9Ti4O8mJGEAJG24W7nIf+S2Q+AjkAT","/assets/pop-worker-Dxv9nvkp.js":"sha384-kD2MqtPeWGVzJ3myMvvgJ0PbQvybMShqHOmAIzhFeDmYxVq73LM51lAoIbRtfUiO","/assets/AdminRouter-DP7h5zZs.js":"sha384-yEdIe8X2KaUVkkzQZl9HYsuKWy9zTWvmhiH0a8WO83F1+q12PhvtyVl5gZn0AXR2","/assets/linear-Cp7OyKlO.js":"sha384-V87hyjvVXx0XaYoACkzjXnErDyuyEuomGuIoK/veFQfCSTD53QzkiwspJgu0hBlk","/assets/math-RobXhXPM.js":"sha384-AVzuJivPCQicCwsAxkD3oh5JwC4xDImEIoKZ8sQ9fVX2iC2tmAlyDmZnnituR6zU","/assets/Arc-PzuToOcu.js":"sha384-fm0QezIupeLm310l8gZ24Wg+rfEzCk2Vc2hZLShZjsZsx02p1UHyK9HMZbbiLX42","/assets/Voronoi-mEBY3e9X.js":"sha384-ecc5JqvSAdGcl/zCTdRSfVEewC194nVgMxxFum4k6yTzH36RCTi+7Yrj2FnDg+Fw","/assets/Path.canvas-Dr614A5x.js":"sha384-jkWQXPM1jLuNr6mDrWvPQPOrDFUha0F5nkkQ+pAy9joJOrath9KGAHnveJz3IWwk","/assets/Arc.canvas-B_znFTMY.js":"sha384-bzSQNgZomUABkNVbo747gJcKwMn+MYZANxHx/EkTJqatlveKgIHFGDMAvWr39sBU","/assets/Points.html-MvhfHpka.js":"sha384-H63hvUL9aZpmbVf7BLz4SGMvBRmsFEyNVcKoQPBXpG8r5seslRi10UsjJZpX4u9h","/assets/DefaultTooltip-waYX0NPE.js":"sha384-qNS+KgQKW1szh0hADD1Deunmmk8aALaoWQudqbc7M2zsOBjFJfpV3hMRLgzKcIev","/assets/index.esm-Ba2Qk9h2.js":"sha384-0GWFmdl66QEFoy716gtMwebjPpkOj2GdBRI4SEfQ1z4qGfoA8c3ZGDmaRqwmARpY","/assets/cap-wasm-config-BYGgxgae.js":"sha384-l79IIXUuroK1Z+P8sBpZyYCdBJg+/tCCthonIVDJ0IiYVdIFV/IyON0ZcvDKt6mR","/assets/__vite-browser-external-L41SmyXF.js":"sha384-htrlzaO3L/yBnphrU+0GyNI6CvyM52YazzKTkJeN0qg7o1wCKGTkMDOx1SAwEaVX","/assets/lineRadial-BvXyJbfs.js":"sha384-BamvBG5EIsuv49Jqwg87Rzd9AvIqIjKu3508lx3uOBsICQA9W7KDBZo7N4gfD/y8","/assets/max-Db0q5_zr.js":"sha384-zns9cLGBXceD4iGjHjBUDNgkCdDVqKqgkYJr4ek3Hk/6hM6tkyAe9agAxR8CtE53","/assets/rect.svelte-aF2Tmrei.js":"sha384-Pdv8rBynXZ8fQQuicCX59x831MGxArow1xbVbwrkPNaADJquQ09zP8uD4vbM595b","/assets/Link.canvas-C62gSArH.js":"sha384-Q0h+COYLPhmW+5J1sQ7QTjNtjmpihDlgdDaoxI1n2H8Q5LI/J7I282wlyG9TgfJe","/assets/ClipPath.canvas-KkbckD0_.js":"sha384-WgG4FeV2RbmINnXHUVkEy99heDvBUcS7jVj06VfjlhU/t7ihm5zNEAsvZIklTR+I","/assets/Labels-1rktN2dQ.js":"sha384-kjmLev+Qjb66vzOPuC7V5weUhpuZOyeXZ8qcV5iZf/rWdCIZQgbz++6r9PcZvEaH","/assets/common-BFiwcqEN.js":"sha384-HjeY+lJJTGEou4zFCvJwAjHm02wUkf1TJb69+EX78Rz3Vns6xrkdEISNImC5xf+N","/assets/key.svelte-raULRA_Z.js":"sha384-v4sRUAQEuaZJVfWrEbnlCiVmHsxvVnV8Zq9FT9LshneUbculQJ+b67xByg6XQFAA","/assets/Points-C0ohko4a.js":"sha384-MdM0musMN4ZqAuuJwM8G8nM6I0kLEKLarWldNiiobN9ijpl/ToyjlXvr2IGw2sWg","/assets/cap.min-fKLXhJri.js":"sha384-XQKyAMgx3HoUEuhZNPkdRDOwbE44Arl45OmFqStf7akxLOFKTPrZiwcxHcc+FcX/","/assets/BrushContext-Cc2Ujdai.js":"sha384-TOok45g6f383F6hEkjq/KccafLzPBszbFv9eHTY6PzH0TdTa9mmjtXqvugSK7toO"}}</script>
+    <script type="module" crossorigin src="/assets/index-C_EEeOdR.js" integrity="sha384-JFgggdGhX33rMy8VPJrdJXH6JKeWL4emv1wlr/+X6U+gCgd5K4OHRhD/VEAOLVBI"></script>
+    <link rel="modulepreload" crossorigin href="/assets/index-client-CtUE6PLo.js" integrity="sha384-goLC15Ux5q8eNzxrpP7Z6EsByk7Srxm41ifuiSDVVXoWXARYXTaujjzQQdMBkD4U">
+    <link rel="stylesheet" crossorigin href="/assets/index-C4UCXfup.css" integrity="sha384-sdSa9vs8kt3W2bhtxDfvUX/Lq6mop9CDTIpPf9YpHqmWMoOkjILrMAGy4MUFslSK">
+  </head>
+  <body class="bg-background text-foreground">
+    <div id="app"></div>
+    <!--
+      JS-required notice. The app is a client-rendered SPA, so with JavaScript
+      disabled #app never mounts and the page is blank. This static <noscript>
+      (our i18n runs in JS, so it can't be localized — English only) turns that
+      scary blank screen into a clear instruction. Self-contained inline styles
+      with a system font + explicit colors so it reads regardless of which theme
+      CSS loaded (theme-init.js can't run, so the document otherwise stays light).
+    -->
+    <noscript>
+      <div
+        style="
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1.5rem;
+          font-family:
+            system-ui,
+            -apple-system,
+            'Segoe UI',
+            Roboto,
+            sans-serif;
+          background: #333333;
+          color: #f5f5f5;
+        "
+      >
+        <div style="max-width: 30rem; text-align: center">
+          <h1 style="margin: 0 0 0.75rem; font-size: 1.5rem; font-weight: 700">
+            FreeSocks needs JavaScript
+          </h1>
+          <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #c8c8c8">
+            FreeSocks runs entirely in your browser — your account, keys, and the human-check all
+            happen on your device, with nothing sent to third parties. Please enable JavaScript and
+            reload the page. If you are using Tor, lower the security level for this site.
+          </p>
+        </div>
+      </div>
+    </noscript>
+  </body>
+</html>

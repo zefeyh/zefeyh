@@ -1,0 +1,21 @@
+# 图标目录：只允许静态图片，禁止任何脚本被解析执行
+<FilesMatch "\.(php|phtml|phar|php[0-9]|pht|shtml|cgi|pl|py|asp|aspx|jsp|sh|htaccess|html?)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# SVG 直接打开时也不允许执行脚本 / 加载外部资源（防存储型 XSS）
+<FilesMatch "\.svg$">
+    <IfModule mod_headers.c>
+        Header set Content-Security-Policy "default-src 'none'; style-src 'unsafe-inline'; img-src data:; sandbox"
+        Header set X-Content-Type-Options "nosniff"
+        Header set Cache-Control "public, max-age=2592000"
+    </IfModule>
+</FilesMatch>
+
+Options -Indexes

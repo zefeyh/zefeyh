@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-control" content="no-cache" />
+    <meta http-equiv="Cache" content="no-cache" />
+    <link rel="icon" href="./favicon.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>咪咕音乐</title>
+    <script type="module" crossorigin src="./static/js/main-747aa123.js"></script>
+    <link rel="modulepreload" crossorigin href="./static/js/@migusdk-617e3513.js">
+    <link rel="modulepreload" crossorigin href="./static/js/@vue-df20709a.js">
+    <link rel="modulepreload" crossorigin href="./static/js/mitt-f7ef348c.js">
+    <link rel="modulepreload" crossorigin href="./static/js/vue-demi-71ba0ef2.js">
+    <link rel="modulepreload" crossorigin href="./static/js/pinia-0985cfc4.js">
+    <link rel="modulepreload" crossorigin href="./static/js/@element-plus-1821b5ee.js">
+    <link rel="modulepreload" crossorigin href="./static/js/lodash-es-7c7a8676.js">
+    <link rel="modulepreload" crossorigin href="./static/js/@ctrl-f8748455.js">
+    <link rel="modulepreload" crossorigin href="./static/js/@popperjs-c75af06c.js">
+    <link rel="modulepreload" crossorigin href="./static/js/normalize-wheel-es-ed76fb12.js">
+    <link rel="modulepreload" crossorigin href="./static/js/element-plus-dfcfd0af.js">
+    <link rel="modulepreload" crossorigin href="./static/js/dijkstrajs-f906a09e.js">
+    <link rel="modulepreload" crossorigin href="./static/js/qrcode-79d680f4.js">
+    <link rel="modulepreload" crossorigin href="./static/js/colorthief-3ba93385.js">
+    <link rel="modulepreload" crossorigin href="./static/js/crypto-js-cc382f0e.js">
+    <link rel="modulepreload" crossorigin href="./static/js/vue-router-33a4dc05.js">
+    <link rel="modulepreload" crossorigin href="./static/js/lodash-f4622abb.js">
+    <link rel="modulepreload" crossorigin href="./static/js/@lrc-player-fad15c04.js">
+    <link rel="modulepreload" crossorigin href="./static/js/destr-7f161240.js">
+    <link rel="modulepreload" crossorigin href="./static/js/deep-pick-omit-c8d1c207.js">
+    <link rel="modulepreload" crossorigin href="./static/js/pinia-plugin-persistedstate-07b2fd8a.js">
+    <link rel="stylesheet" href="./static/css/element-plus-beb79894.css">
+    <link rel="stylesheet" href="./static/css/index-354e96f2.css">
+    <!-- Build time: 2026/07/21 13:58:28.563 -->
+    <meta name="build-timestamp" content="1784613508563">
+    <meta name="build-date" content="2026/07/21T13:58:28.563+08:00">
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script src="./js/MG-Feedback-SDK-min.js" type="module"></script>
+    
+  </body>
+</html>

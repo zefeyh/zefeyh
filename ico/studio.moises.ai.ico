@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark" />
+    <style>
+      html,
+      body {
+        background-color: #101013; /* --neutral-1 */
+        margin: 0;
+      }
+
+      /* Boot cover for /studio/:projectId. It ships as static markup so the route
+         paints it before any script runs, and it hides the auth, shell and DAW
+         spinners that would otherwise appear one after another. Application
+         code takes it down once the timeline canvas has drawn its first frame
+         (src/lib/dawBootOverlay.js). */
+      #daw-boot-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #101013; /* --neutral-1 */
+        transition: opacity 220ms ease-out;
+      }
+
+      #daw-boot-overlay[hidden] {
+        display: none;
+      }
+
+      #daw-boot-overlay.is-leaving {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* The design system's Spinner, which is Radix Themes' one, rebuilt as
+         static markup because the cover paints before React. Everything here
+         is copied from @radix-ui/themes: eight leaves an eighth of the width
+         each, a fade from full to a quarter over 800ms, and each leaf started
+         an eighth of that behind the one before it, which is what makes the
+         fade read as rotation. The numbers are size="2" at the default
+         scaling, so 16px with a 3px radius, and the colour is --neutral-12,
+         which is what the spinner inside the app inherits. Keep in step with
+         the <Spinner size="2" color="gray" /> in DawAccessGuard. */
+      .daw-boot-overlay__spinner {
+        display: block;
+        position: relative;
+        width: 16px;
+        height: 16px;
+        color: #E6EAF0; /* --neutral-12 */
+        opacity: 0.65;
+      }
+
+      .daw-boot-overlay__leaf {
+        position: absolute;
+        top: 0;
+        left: calc(50% - 12.5% / 2);
+        width: 12.5%;
+        height: 100%;
+        animation: daw-boot-overlay-leaf-fade 800ms linear infinite;
+      }
+
+      .daw-boot-overlay__leaf::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 30%;
+        border-radius: 3px;
+        background-color: currentColor;
+      }
+
+      .daw-boot-overlay__leaf:nth-child(1) { transform: rotate(0deg); animation-delay: -800ms; }
+      .daw-boot-overlay__leaf:nth-child(2) { transform: rotate(45deg); animation-delay: -700ms; }
+      .daw-boot-overlay__leaf:nth-child(3) { transform: rotate(90deg); animation-delay: -600ms; }
+      .daw-boot-overlay__leaf:nth-child(4) { transform: rotate(135deg); animation-delay: -500ms; }
+      .daw-boot-overlay__leaf:nth-child(5) { transform: rotate(180deg); animation-delay: -400ms; }
+      .daw-boot-overlay__leaf:nth-child(6) { transform: rotate(225deg); animation-delay: -300ms; }
+      .daw-boot-overlay__leaf:nth-child(7) { transform: rotate(270deg); animation-delay: -200ms; }
+      .daw-boot-overlay__leaf:nth-child(8) { transform: rotate(315deg); animation-delay: -100ms; }
+
+      /* Only opacity animates, so this runs on the compositor and keeps
+         turning through the main-thread blocks that boot is made of. */
+      @keyframes daw-boot-overlay-leaf-fade {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0.25;
+        }
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="apple-itunes-app"
+      content="app-id=1515796612, app-argument=https://studio.moises.ai"
+    />
+
+    <meta name="description" content="The musicians platform for audio processing" />
+    <meta name="theme-color" content="#101013" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Moises Studio" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <title>Moises Studio</title>
+    <script>if(!Array.prototype.toSorted){Array.prototype.toSorted = function (compareFn) {return [...this].sort(compareFn)}}</script>
+    <script>
+      // Post-deploy self-heal: right after a release, requests for the new
+      // fingerprinted chunks can briefly miss (deploy propagation window) and
+      // the app fails to boot. When a module script or a dynamic-import
+      // preload fails, retry the navigation — at most once per minute per tab
+      // so a permanently broken build cannot cause a reload loop.
+      ;(function () {
+        var KEY = 'moises:chunk-retry-at'
+        function retry() {
+          try {
+            var last = Number(sessionStorage.getItem(KEY)) || 0
+            if (Date.now() - last < 60000) return
+            sessionStorage.setItem(KEY, String(Date.now()))
+          } catch (_) {
+            // Storage unavailable means attempts can't be rate-limited: don't retry.
+            return
+          }
+          location.reload()
+        }
+        window.addEventListener(
+          'error',
+          function (event) {
+            var el = event.target
+            if (el && el !== window && el.tagName === 'SCRIPT' && el.type === 'module') retry()
+          },
+          true,
+        )
+        window.addEventListener('vite:preloadError', function (event) {
+          event.preventDefault()
+          retry()
+        })
+      })()
+    </script>
+    <script type="module" crossorigin src="/assets/index-DjY6-oUD.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-_8SPL4h_.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-FKqNX8S8.js">
+    <link rel="modulepreload" crossorigin href="/assets/lyric-writer-CS1z40P6.js">
+    <link rel="modulepreload" crossorigin href="/assets/daw-eMDCkllZ.js">
+    <link rel="stylesheet" crossorigin href="/assets/ui-oGG8q8hZ.css">
+    <link rel="stylesheet" crossorigin href="/assets/lyric-writer-Betzm56s.css">
+    <link rel="stylesheet" crossorigin href="/assets/daw-CEJFY9Qr.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-CyrULTMZ.css">
+  </head>
+  <body>
+    <!-- Inlined because the cover has to paint before any script or
+         stylesheet the app owns, which rules out importing the Spinner
+         component itself. -->
+    <div id="daw-boot-overlay" hidden>
+      <span class="daw-boot-overlay__spinner" role="img" aria-label="Loading Moises Studio">
+        <span class="daw-boot-overlay__leaf"></span>
+        <span class="daw-boot-overlay__leaf"></span>
+        <span class="daw-boot-overlay__leaf"></span>
+        <span class="daw-boot-overlay__leaf"></span>
+        <span class="daw-boot-overlay__leaf"></span>
+        <span class="daw-boot-overlay__leaf"></span>
+        <span class="daw-boot-overlay__leaf"></span>
+        <span class="daw-boot-overlay__leaf"></span>
+      </span>
+    </div>
+    <script>
+      ;(function () {
+        // A v1 conversion renders its own progress overlay and can run for
+        // minutes, so it opts out of the cover.
+        if (
+          !/^\/(?:studio|daw)\/[^/]+/.test(location.pathname) ||
+          new URLSearchParams(location.search).has('convertFrom')
+        ) {
+          return
+        }
+
+        document.getElementById('daw-boot-overlay').hidden = false
+
+        // The header measures its own content to decide what to collapse, so a
+        // font that arrives after it has laid out forces a second, visible
+        // pass. These two carry every measured string in the header row (the
+        // mono timers, the tempo and title text), and only the DAW uses the
+        // mono face, so the fetch starts here rather than site-wide.
+        for (const font of ['ArticulatCF-Mono-Regular', 'ArticulatCF-Medium']) {
+          const link = document.createElement('link')
+          link.rel = 'preload'
+          link.as = 'font'
+          link.type = 'font/otf'
+          link.crossOrigin = 'anonymous'
+          link.href = '/assets/fonts/' + font + '.otf'
+          document.head.append(link)
+        }
+      })()
+    </script>
+    <div id="root"></div>
+
+    <!-- Osano, GTM, the Meta pixel and RudderStack used to live here. They are
+         all loaded by moises-core now, from VITE_OSANO_ID, VITE_GTM_ID,
+         VITE_FB_PIXEL_ID and VITE_RUDDERSTACK_*, each skipped when its variable
+         is unset. See packages/moises-core/src/utils/tags/. -->
+  </body>
+</html>

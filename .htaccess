@@ -1,0 +1,54 @@
+# 网址导航 —— public/ 站点根目录规则（静态资源安全头、缓存与压缩）
+# 后台 admin.php 由 PHP 自行发送专属安全头，这里只作用于静态文件，避免响应头重复或被覆盖。
+
+Options -Indexes
+DirectoryIndex index.html
+
+# 1. 禁止下载数据库、备份、配置、模板等敏感文件
+<FilesMatch "\.(sqlite|sqlite3|db|bak|old|log|sql|swp|tmp)$|^(admin-config\.php|config\.php|template\.html|\.login-throttle\.json)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 2. 上传目录内禁止执行脚本（防止 WebShell）
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^ico/.*\.(php|phtml|phar|pht|cgi|pl|py|asp|jsp|sh)([0-9]*)?$ - [F,L,NC]
+</IfModule>
+
+# 3. 静态文件安全响应头
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html?|css|js|json|xml|ico|png|jpe?g|gif|svg|webp|woff2?|ttf)$">
+        Header set X-Content-Type-Options "nosniff"
+        Header set X-Frame-Options "DENY"
+        Header set Referrer-Policy "no-referrer"
+        Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+        Header set Cross-Origin-Resource-Policy "same-origin"
+    </FilesMatch>
+</IfModule>
+
+# 4. 缓存：图标字体等长期不变资源可长缓存；后台样式与数据页短缓存便于即时生效
+<IfModule mod_headers.c>
+    <FilesMatch "^(font-awesome\.min\.css|.*\.(ico|png|jpe?g|gif|svg|webp|woff2?|ttf|js))$">
+        Header set Cache-Control "public, max-age=2592000, immutable"
+    </FilesMatch>
+    <FilesMatch "^admin\.css$">
+        Header set Cache-Control "public, max-age=600, must-revalidate"
+    </FilesMatch>
+    <FilesMatch "\.json$">
+        Header set Cache-Control "public, max-age=60, must-revalidate"
+    </FilesMatch>
+    <FilesMatch "\.html$">
+        Header set Cache-Control "public, max-age=60, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# 5. 压缩文本资源
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain application/json application/javascript
+</IfModule>
