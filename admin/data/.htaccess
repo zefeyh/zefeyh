@@ -1,9 +1,0 @@
-# SQLite 数据库目录：禁止任何 Web 直接访问
-<IfModule mod_authz_core.c>
-    Require all denied
-</IfModule>
-<IfModule !mod_authz_core.c>
-    Order allow,deny
-    Deny from all
-</IfModule>
-Options -Indexes
